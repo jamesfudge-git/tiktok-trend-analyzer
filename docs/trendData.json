@@ -1,0 +1,639 @@
+{
+  "hashtags_7d": [
+    {
+      "hashtag": "# mothersday",
+      "post_count": "556K",
+      "chart_image": "charts/7d_1__mothersday.png",
+      "rank": 1,
+      "numeric_count": 556000.0,
+      "growth": 134,
+      "status": "peaked"
+    },
+    {
+      "hashtag": "# happymothersday",
+      "post_count": "144K",
+      "chart_image": "charts/7d_2__happymothersday.png",
+      "rank": 2,
+      "numeric_count": 144000.0,
+      "growth": 143,
+      "status": "peaked"
+    },
+    {
+      "hashtag": "# mom",
+      "post_count": "171K",
+      "chart_image": "charts/7d_3__mom.png",
+      "rank": 3,
+      "numeric_count": 171000.0,
+      "growth": 119,
+      "status": "peaked"
+    },
+    {
+      "hashtag": "# motherhood",
+      "post_count": "71K",
+      "chart_image": "charts/7d_4__motherhood.png",
+      "rank": 4,
+      "numeric_count": 71000.0,
+      "growth": 115,
+      "status": "peaked"
+    },
+    {
+      "hashtag": "# mother",
+      "post_count": "48K",
+      "chart_image": "charts/7d_5__mother.png",
+      "rank": 5,
+      "numeric_count": 48000.0,
+      "growth": 116,
+      "status": "peaked"
+    },
+    {
+      "hashtag": "# mama",
+      "post_count": "65K",
+      "chart_image": "charts/7d_6__mama.png",
+      "rank": 6,
+      "numeric_count": 65000.0,
+      "growth": 85,
+      "status": "stable"
+    },
+    {
+      "hashtag": "# felizdiadelasmadres",
+      "post_count": "37K",
+      "chart_image": "charts/7d_7__felizdiadelasmadres.png",
+      "rank": 7,
+      "numeric_count": 37000.0,
+      "growth": 84,
+      "status": "stable"
+    },
+    {
+      "hashtag": "# mothersday2025",
+      "post_count": "30K",
+      "chart_image": "charts/7d_8__mothersday2025.png",
+      "rank": 8,
+      "numeric_count": 30000.0,
+      "growth": 79,
+      "status": "stable"
+    },
+    {
+      "hashtag": "# mothers",
+      "post_count": "18K",
+      "chart_image": "charts/7d_9__mothers.png",
+      "rank": 9,
+      "numeric_count": 18000.0,
+      "growth": 93,
+      "status": "stable"
+    },
+    {
+      "hashtag": "# madre",
+      "post_count": "17K",
+      "chart_image": "charts/7d_10__madre.png",
+      "rank": 10,
+      "numeric_count": 17000.0,
+      "growth": 79,
+      "status": "stable"
+    },
+    {
+      "hashtag": "# motherdaughter",
+      "post_count": "15K",
+      "chart_image": "charts/7d_11__motherdaughter.png",
+      "rank": 11,
+      "numeric_count": 15000.0,
+      "growth": 95,
+      "status": "stable"
+    },
+    {
+      "hashtag": "# mommy",
+      "post_count": "15K",
+      "chart_image": "charts/7d_12__mommy.png",
+      "rank": 12,
+      "numeric_count": 15000.0,
+      "growth": 71,
+      "status": "stable"
+    },
+    {
+      "hashtag": "# tiktokautocampaign",
+      "post_count": "20K",
+      "chart_image": "charts/7d_13__tiktokautocampaign.png",
+      "rank": 13,
+      "numeric_count": 20000.0,
+      "growth": 89,
+      "status": "stable"
+    },
+    {
+      "hashtag": "# moms",
+      "post_count": "12K",
+      "chart_image": "charts/7d_14__moms.png",
+      "rank": 14,
+      "numeric_count": 12000.0,
+      "growth": 107,
+      "status": "peaked"
+    },
+    {
+      "hashtag": "# berryavenue",
+      "post_count": "19K",
+      "chart_image": "charts/7d_15__berryavenue.png",
+      "rank": 15,
+      "numeric_count": 19000.0,
+      "growth": 79,
+      "status": "stable"
+    },
+    {
+      "hashtag": "# fancythat",
+      "post_count": "5K",
+      "chart_image": "charts/7d_16__fancythat.png",
+      "rank": 16,
+      "numeric_count": 5000.0,
+      "growth": 62,
+      "status": "stable"
+    },
+    {
+      "hashtag": "# laliga",
+      "post_count": "8K",
+      "chart_image": "charts/7d_17__laliga.png",
+      "rank": 17,
+      "numeric_count": 8000.0,
+      "growth": 63,
+      "status": "stable"
+    },
+    {
+      "hashtag": "# elclasico",
+      "post_count": "4K",
+      "chart_image": "charts/7d_18__elclasico.png",
+      "rank": 18,
+      "numeric_count": 4000.0,
+      "growth": 58,
+      "status": "stable"
+    },
+    {
+      "hashtag": "# motherday",
+      "post_count": "10K",
+      "chart_image": "charts/7d_19__motherday.png",
+      "rank": 19,
+      "numeric_count": 10000.0,
+      "growth": 78,
+      "status": "stable"
+    },
+    {
+      "hashtag": "# mbappe",
+      "post_count": "7K",
+      "chart_image": "charts/7d_20__mbappe.png",
+      "rank": 20,
+      "numeric_count": 7000.0,
+      "growth": 44,
+      "status": "falling"
+    },
+    {
+      "hashtag": "# carreview",
+      "post_count": "6K",
+      "chart_image": "charts/7d_21__carreview.png",
+      "rank": 21,
+      "numeric_count": 6000.0,
+      "growth": 81,
+      "status": "stable"
+    }
+  ],
+  "hashtags_30d": [
+    {
+      "hashtag": "# mothersday",
+      "post_count": "723K",
+      "chart_image": "charts/30d_1__mothersday.png",
+      "rank": 1,
+      "numeric_count": 723000.0,
+      "growth": 134,
+      "status": "peaked"
+    },
+    {
+      "hashtag": "# happymothersday",
+      "post_count": "151K",
+      "chart_image": "charts/30d_2__happymothersday.png",
+      "rank": 2,
+      "numeric_count": 151000.0,
+      "growth": 143,
+      "status": "peaked"
+    },
+    {
+      "hashtag": "# metgala",
+      "post_count": "59K",
+      "chart_image": "charts/30d_3__metgala.png",
+      "rank": 3,
+      "numeric_count": 59000.0,
+      "growth": 126,
+      "status": "peaked"
+    },
+    {
+      "hashtag": "# cincodemayo",
+      "post_count": "63K",
+      "chart_image": "charts/30d_4__cincodemayo.png",
+      "rank": 4,
+      "numeric_count": 63000.0,
+      "growth": 118,
+      "status": "peaked"
+    },
+    {
+      "hashtag": "# diadelasmadres",
+      "post_count": "56K",
+      "chart_image": "charts/30d_5__diadelasmadres.png",
+      "rank": 5,
+      "numeric_count": 56000.0,
+      "growth": 129,
+      "status": "peaked"
+    },
+    {
+      "hashtag": "# gta6",
+      "post_count": "34K",
+      "chart_image": "charts/30d_6__gta6.png",
+      "rank": 6,
+      "numeric_count": 34000.0,
+      "growth": 86,
+      "status": "stable"
+    },
+    {
+      "hashtag": "# mothersday2025",
+      "post_count": "42K",
+      "chart_image": "charts/30d_7__mothersday2025.png",
+      "rank": 7,
+      "numeric_count": 42000.0,
+      "growth": 82,
+      "status": "stable"
+    },
+    {
+      "hashtag": "# metgala2025",
+      "post_count": "28K",
+      "chart_image": "charts/30d_8__metgala2025.png",
+      "rank": 8,
+      "numeric_count": 28000.0,
+      "growth": 88,
+      "status": "stable"
+    },
+    {
+      "hashtag": "# felizdiadelasmadres",
+      "post_count": "38K",
+      "chart_image": "charts/30d_9__felizdiadelasmadres.png",
+      "rank": 9,
+      "numeric_count": 38000.0,
+      "growth": 78,
+      "status": "stable"
+    },
+    {
+      "hashtag": "# karolg",
+      "post_count": "26K",
+      "chart_image": "charts/30d_10__karolg.png",
+      "rank": 10,
+      "numeric_count": 26000.0,
+      "growth": 73,
+      "status": "stable"
+    },
+    {
+      "hashtag": "# madre",
+      "post_count": "27K",
+      "chart_image": "charts/30d_11__madre.png",
+      "rank": 11,
+      "numeric_count": 27000.0,
+      "growth": 76,
+      "status": "stable"
+    },
+    {
+      "hashtag": "# tiktokautocampaign",
+      "post_count": "32K",
+      "chart_image": "charts/30d_12__tiktokautocampaign.png",
+      "rank": 12,
+      "numeric_count": 32000.0,
+      "growth": 92,
+      "status": "stable"
+    },
+    {
+      "hashtag": "# kaylamalecc",
+      "post_count": "9K",
+      "chart_image": "charts/30d_13__kaylamalecc.png",
+      "rank": 13,
+      "numeric_count": 9000.0,
+      "growth": 103,
+      "status": "peaked"
+    },
+    {
+      "hashtag": "# prettylittlebaby",
+      "post_count": "21K",
+      "chart_image": "charts/30d_14__prettylittlebaby.png",
+      "rank": 14,
+      "numeric_count": 21000.0,
+      "growth": 107,
+      "status": "peaked"
+    },
+    {
+      "hashtag": "# 9мая",
+      "post_count": "20K",
+      "chart_image": "charts/30d_15__9мая.png",
+      "rank": 15,
+      "numeric_count": 20000.0,
+      "growth": 57,
+      "status": "stable"
+    },
+    {
+      "hashtag": "# zendaya",
+      "post_count": "13K",
+      "chart_image": "charts/30d_16__zendaya.png",
+      "rank": 16,
+      "numeric_count": 13000.0,
+      "growth": 77,
+      "status": "stable"
+    },
+    {
+      "hashtag": "# mothers",
+      "post_count": "24K",
+      "chart_image": "charts/30d_17__mothers.png",
+      "rank": 17,
+      "numeric_count": 24000.0,
+      "growth": 69,
+      "status": "stable"
+    },
+    {
+      "hashtag": "# teacherappreciation",
+      "post_count": "19K",
+      "chart_image": "charts/30d_18__teacherappreciation.png",
+      "rank": 18,
+      "numeric_count": 19000.0,
+      "growth": 85,
+      "status": "stable"
+    },
+    {
+      "hashtag": "# streameruniversity",
+      "post_count": "21K",
+      "chart_image": "charts/30d_19__streameruniversity.png",
+      "rank": 19,
+      "numeric_count": 21000.0,
+      "growth": 77,
+      "status": "stable"
+    },
+    {
+      "hashtag": "# ap",
+      "post_count": "15K",
+      "chart_image": "charts/30d_20__ap.png",
+      "rank": 20,
+      "numeric_count": 15000.0,
+      "growth": 76,
+      "status": "stable"
+    },
+    {
+      "hashtag": "# inter",
+      "post_count": "12K",
+      "chart_image": "charts/30d_21__inter.png",
+      "rank": 21,
+      "numeric_count": 12000.0,
+      "growth": 41,
+      "status": "falling"
+    }
+  ],
+  "trending_songs": [
+    {
+      "song_name": "The Winner Is... - DeVotchKa Version",
+      "artist": "DeVotchKa",
+      "post_count": null,
+      "chart_image": null,
+      "rank": 1,
+      "numeric_count": 0,
+      "growth": 127,
+      "status": "peaked"
+    },
+    {
+      "song_name": "1-800-273-8255",
+      "artist": "Logic",
+      "post_count": null,
+      "chart_image": null,
+      "rank": 2,
+      "numeric_count": 0,
+      "growth": 117,
+      "status": "peaked"
+    },
+    {
+      "song_name": "New Flame (but I promise you) (feat. Usher & Rick Ross)",
+      "artist": "Chris Brown",
+      "post_count": null,
+      "chart_image": null,
+      "rank": 3,
+      "numeric_count": 0,
+      "growth": 104,
+      "status": "peaked"
+    },
+    {
+      "song_name": "Illegal",
+      "artist": "PinkPantheress",
+      "post_count": null,
+      "chart_image": null,
+      "rank": 4,
+      "numeric_count": 0,
+      "growth": 119,
+      "status": "peaked"
+    },
+    {
+      "song_name": "Who You Share it With",
+      "artist": "Layup",
+      "post_count": null,
+      "chart_image": null,
+      "rank": 5,
+      "numeric_count": 0,
+      "growth": 100,
+      "status": "stable"
+    },
+    {
+      "song_name": "Cowpoke",
+      "artist": "Isaiah Sheffield",
+      "post_count": null,
+      "chart_image": null,
+      "rank": 6,
+      "numeric_count": 0,
+      "growth": 92,
+      "status": "stable"
+    },
+    {
+      "song_name": "i always seem to miss her",
+      "artist": "rosevile sucks",
+      "post_count": null,
+      "chart_image": null,
+      "rank": 7,
+      "numeric_count": 0,
+      "growth": 96,
+      "status": "stable"
+    },
+    {
+      "song_name": "ILYSMIH",
+      "artist": "Kali Uchis",
+      "post_count": null,
+      "chart_image": null,
+      "rank": 8,
+      "numeric_count": 0,
+      "growth": 118,
+      "status": "peaked"
+    },
+    {
+      "song_name": "RP10 Dance",
+      "artist": "BRISTACKZ",
+      "post_count": null,
+      "chart_image": null,
+      "rank": 9,
+      "numeric_count": 0,
+      "growth": 106,
+      "status": "peaked"
+    },
+    {
+      "song_name": "MONTAGEM TOMADA (Ultra Slowed)",
+      "artist": "MXZI",
+      "post_count": null,
+      "chart_image": null,
+      "rank": 10,
+      "numeric_count": 0,
+      "growth": 71,
+      "status": "stable"
+    },
+    {
+      "song_name": "TU SANCHO",
+      "artist": "Fuerza Regida",
+      "post_count": null,
+      "chart_image": null,
+      "rank": 11,
+      "numeric_count": 0,
+      "growth": 92,
+      "status": "stable"
+    },
+    {
+      "song_name": "Orquestra In (Live)",
+      "artist": "Dj Luh Souza",
+      "post_count": null,
+      "chart_image": null,
+      "rank": 12,
+      "numeric_count": 0,
+      "growth": 76,
+      "status": "stable"
+    },
+    {
+      "song_name": "Skinny Little Missy",
+      "artist": "Nickelback",
+      "post_count": null,
+      "chart_image": null,
+      "rank": 13,
+      "numeric_count": 0,
+      "growth": 67,
+      "status": "stable"
+    },
+    {
+      "song_name": "Dirty Diana",
+      "artist": "Younginsosleaze",
+      "post_count": null,
+      "chart_image": null,
+      "rank": 14,
+      "numeric_count": 0,
+      "growth": 70,
+      "status": "stable"
+    },
+    {
+      "song_name": "Deuces (feat. Tyga & Kevin McCall)",
+      "artist": "Chris Brown",
+      "post_count": null,
+      "chart_image": null,
+      "rank": 15,
+      "numeric_count": 0,
+      "growth": 93,
+      "status": "stable"
+    },
+    {
+      "song_name": "These Are the Special Times",
+      "artist": "Urban Method",
+      "post_count": null,
+      "chart_image": null,
+      "rank": 16,
+      "numeric_count": 0,
+      "growth": 87,
+      "status": "stable"
+    },
+    {
+      "song_name": "do better blues",
+      "artist": "Jhené Aiko",
+      "post_count": null,
+      "chart_image": null,
+      "rank": 17,
+      "numeric_count": 0,
+      "growth": 49,
+      "status": "falling"
+    },
+    {
+      "song_name": "Blessed Like That",
+      "artist": "threetwenty",
+      "post_count": null,
+      "chart_image": null,
+      "rank": 18,
+      "numeric_count": 0,
+      "growth": 93,
+      "status": "stable"
+    },
+    {
+      "song_name": "So Anxious",
+      "artist": "Ginuwine",
+      "post_count": null,
+      "chart_image": null,
+      "rank": 19,
+      "numeric_count": 0,
+      "growth": 74,
+      "status": "stable"
+    },
+    {
+      "song_name": "Unfuckwitable",
+      "artist": "Rylo Rodriguez",
+      "post_count": null,
+      "chart_image": null,
+      "rank": 20,
+      "numeric_count": 0,
+      "growth": 67,
+      "status": "stable"
+    }
+  ],
+  "breakout_songs": [
+    {
+      "song_name": "Running Off (Sped Up)",
+      "artist": "Jshxwty",
+      "post_count": null,
+      "chart_image": null,
+      "rank": 1,
+      "numeric_count": 0,
+      "growth": 131,
+      "status": "peaked"
+    },
+    {
+      "song_name": "Blessed Like That",
+      "artist": "threetwenty",
+      "post_count": null,
+      "chart_image": null,
+      "rank": 2,
+      "numeric_count": 0,
+      "growth": 141,
+      "status": "peaked"
+    },
+    {
+      "song_name": "COM MEDO!",
+      "artist": "Sayfalse & Scythermane",
+      "post_count": null,
+      "chart_image": null,
+      "rank": 3,
+      "numeric_count": 0,
+      "growth": 121,
+      "status": "peaked"
+    },
+    {
+      "song_name": "Suit & Tie (feat. Jay-Z)",
+      "artist": "Justin Timberlake",
+      "post_count": null,
+      "chart_image": null,
+      "rank": 4,
+      "numeric_count": 0,
+      "growth": 104,
+      "status": "peaked"
+    },
+    {
+      "song_name": "Take My Hand",
+      "artist": "Matt Berry",
+      "post_count": null,
+      "chart_image": null,
+      "rank": 5,
+      "numeric_count": 0,
+      "growth": 134,
+      "status": "peaked"
+    }
+  ],
+  "last_updated": "2025-05-14 01:34:33"
+}
