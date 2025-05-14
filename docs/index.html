@@ -112,6 +112,8 @@
         /* Trend Lists */
         .trend-list {
             list-style-type: none;
+            max-height: 400px;
+            overflow-y: auto;
         }
         
         .trend-item {
@@ -119,6 +121,17 @@
             border-bottom: 1px solid #eee;
             display: flex;
             align-items: center;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .trend-item:hover {
+            background-color: #f9f9f9;
+        }
+        
+        .trend-item.active {
+            background-color: #fff1f3;
+            border-left: 3px solid #FE2C55;
         }
         
         .trend-item:last-child {
@@ -200,6 +213,82 @@
             flex: 1;
         }
         
+        /* Trend details section */
+        .trend-details {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .trend-details-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .trend-details-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .trend-details-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .trend-details-meta-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .trend-details-meta-value {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .trend-details-meta-label {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .trend-chart {
+            margin-top: 20px;
+            position: relative;
+        }
+        
+        .trend-chart img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .chart-analysis {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+        
+        .chart-analysis h3 {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+        
+        .no-selection {
+            color: #999;
+            text-align: center;
+            padding: 40px 0;
+            font-style: italic;
+        }
+        
         /* Responsive design */
         @media (max-width: 768px) {
             .row {
@@ -237,6 +326,47 @@
             </div>
             
             <button id="apply-filters">Apply Filters</button>
+        </div>
+        
+        <!-- Trend Details Section -->
+        <div class="trend-details" id="trend-details">
+            <div class="no-selection" id="no-selection">
+                Select a trend to see detailed information and chart analysis
+            </div>
+            <div id="trend-details-content" style="display: none;">
+                <div class="trend-details-header">
+                    <div class="trend-details-title" id="detail-title"></div>
+                    <div class="trend-status" id="detail-status"></div>
+                </div>
+                
+                <div class="trend-details-meta">
+                    <div class="trend-details-meta-item">
+                        <div class="trend-details-meta-value" id="detail-rank"></div>
+                        <div class="trend-details-meta-label">Rank</div>
+                    </div>
+                    <div class="trend-details-meta-item">
+                        <div class="trend-details-meta-value" id="detail-posts"></div>
+                        <div class="trend-details-meta-label" id="detail-posts-label">Posts</div>
+                    </div>
+                    <div class="trend-details-meta-item">
+                        <div class="trend-details-meta-value" id="detail-growth"></div>
+                        <div class="trend-details-meta-label">Growth</div>
+                    </div>
+                </div>
+                
+                <div class="trend-chart">
+                    <h3>Trend Performance</h3>
+                    <img id="chart-image" src="" alt="Trend performance chart">
+                    
+                    <div class="chart-analysis">
+                        <h3>Chart Analysis</h3>
+                        <p id="chart-analysis-text">
+                            This chart shows the trend's performance over time. The pattern indicates 
+                            recent growth activity and engagement levels.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <!-- Hashtags and Songs -->
@@ -277,6 +407,8 @@
             trending_songs: [],
             breakout_songs: []
         };
+        let selectedTrend = null;
+        let selectedTrendType = null;
         
         // Wait for DOM to be fully loaded
         document.addEventListener('DOMContentLoaded', function() {
@@ -321,7 +453,8 @@
                     rank: i,
                     growth: Math.floor(Math.random() * 300),
                     post_count: `${Math.floor(Math.random() * 10)}M`,
-                    status: getRandomStatus()
+                    status: getRandomStatus(),
+                    chart_image: null
                 });
             }
             
@@ -334,7 +467,8 @@
                     rank: i,
                     growth: Math.floor(Math.random() * 300),
                     post_count: `${Math.floor(Math.random() * 10)}M`,
-                    status: getRandomStatus()
+                    status: getRandomStatus(),
+                    chart_image: null
                 });
             }
             
@@ -347,7 +481,8 @@
                     rank: i,
                     growth: Math.floor(Math.random() * 300) + 200,
                     post_count: `${Math.floor(Math.random() * 5)}M`,
-                    status: 'rising'
+                    status: 'rising',
+                    chart_image: null
                 });
             }
             
@@ -386,6 +521,13 @@
             updateHashtagsList(filteredHashtags);
             updateSongsList(trendData.trending_songs);
             updateBreakoutList(trendData.breakout_songs);
+            
+            // Clear selection if the selected trend is a hashtag and timeframe changed
+            if (selectedTrendType === 'hashtag' && 
+                ((timeframe === '7' && !trendData.hashtags_7d.find(h => h.hashtag === selectedTrend?.hashtag)) ||
+                 (timeframe === '30' && !trendData.hashtags_30d.find(h => h.hashtag === selectedTrend?.hashtag)))) {
+                clearSelection();
+            }
         }
         
         // Update the hashtags list
@@ -399,7 +541,7 @@
             }
             
             hashtags.forEach((hashtag, index) => {
-                if (index >= 10) return; // Limit to top 10
+                if (index >= 20) return; // Limit to top 20
                 
                 const growthDirection = hashtag.growth >= 0 ? 'positive' : 'negative';
                 const growthIcon = growthDirection === 'positive' ? '↑' : '↓';
@@ -407,6 +549,10 @@
                 
                 const item = document.createElement('li');
                 item.className = 'trend-item';
+                if (selectedTrend && selectedTrend.hashtag === hashtag.hashtag) {
+                    item.className += ' active';
+                }
+                
                 item.innerHTML = `
                     <div class="trend-rank">${hashtag.rank || index + 1}</div>
                     <div class="trend-content">
@@ -423,6 +569,17 @@
                     </div>
                 `;
                 
+                // Add click event to show details
+                item.addEventListener('click', () => {
+                    showTrendDetails(hashtag, 'hashtag');
+                    
+                    // Mark this item as active
+                    document.querySelectorAll('.trend-item').forEach(el => {
+                        el.classList.remove('active');
+                    });
+                    item.classList.add('active');
+                });
+                
                 list.appendChild(item);
             });
         }
@@ -438,7 +595,7 @@
             }
             
             songs.forEach((song, index) => {
-                if (index >= 10) return; // Limit to top 10
+                if (index >= 20) return; // Limit to top 20
                 
                 const growthDirection = song.growth >= 0 ? 'positive' : 'negative';
                 const growthIcon = growthDirection === 'positive' ? '↑' : '↓';
@@ -446,21 +603,36 @@
                 
                 const item = document.createElement('li');
                 item.className = 'trend-item';
+                if (selectedTrend && selectedTrend.song_name === song.song_name) {
+                    item.className += ' active';
+                }
+                
                 item.innerHTML = `
                     <div class="trend-rank">${song.rank || index + 1}</div>
                     <div class="trend-content">
                         <div class="trend-name">
-                            ${song.song_name} - ${song.artist}
+                            ${song.song_name}
                             <span class="trend-status ${statusClass}">${song.status || 'stable'}</span>
                         </div>
                         <div class="trend-meta">
-                            <span>Videos: ${song.post_count || 'N/A'}</span>
+                            <span>${song.artist || 'Unknown Artist'}</span>
                             <span class="growth-${growthDirection}">
                                 ${growthIcon} ${Math.abs(song.growth || 0)}%
                             </span>
                         </div>
                     </div>
                 `;
+                
+                // Add click event to show details
+                item.addEventListener('click', () => {
+                    showTrendDetails(song, 'song');
+                    
+                    // Mark this item as active
+                    document.querySelectorAll('.trend-item').forEach(el => {
+                        el.classList.remove('active');
+                    });
+                    item.classList.add('active');
+                });
                 
                 list.appendChild(item);
             });
@@ -481,15 +653,19 @@
                 
                 const item = document.createElement('li');
                 item.className = 'trend-item';
+                if (selectedTrend && selectedTrend.song_name === song.song_name) {
+                    item.className += ' active';
+                }
+                
                 item.innerHTML = `
                     <div class="trend-rank">${song.rank || index + 1}</div>
                     <div class="trend-content">
                         <div class="trend-name">
-                            ${song.song_name} - ${song.artist}
+                            ${song.song_name}
                             <span class="trend-status status-rising">breakout</span>
                         </div>
                         <div class="trend-meta">
-                            <span>Videos: ${song.post_count || 'N/A'}</span>
+                            <span>${song.artist || 'Unknown Artist'}</span>
                             <span class="growth-positive">
                                 ↑ ${Math.abs(song.growth || 0)}%
                             </span>
@@ -497,7 +673,114 @@
                     </div>
                 `;
                 
+                // Add click event to show details
+                item.addEventListener('click', () => {
+                    showTrendDetails(song, 'breakout');
+                    
+                    // Mark this item as active
+                    document.querySelectorAll('.trend-item').forEach(el => {
+                        el.classList.remove('active');
+                    });
+                    item.classList.add('active');
+                });
+                
                 list.appendChild(item);
+            });
+        }
+        
+        // Show trend details
+        function showTrendDetails(trend, type) {
+            selectedTrend = trend;
+            selectedTrendType = type;
+            
+            // Get elements
+            const detailsContent = document.getElementById('trend-details-content');
+            const noSelection = document.getElementById('no-selection');
+            const detailTitle = document.getElementById('detail-title');
+            const detailStatus = document.getElementById('detail-status');
+            const detailRank = document.getElementById('detail-rank');
+            const detailPosts = document.getElementById('detail-posts');
+            const detailPostsLabel = document.getElementById('detail-posts-label');
+            const detailGrowth = document.getElementById('detail-growth');
+            const chartImage = document.getElementById('chart-image');
+            const chartAnalysis = document.getElementById('chart-analysis-text');
+            
+            // Show the details content
+            detailsContent.style.display = 'block';
+            noSelection.style.display = 'none';
+            
+            // Fill in details
+            if (type === 'hashtag') {
+                detailTitle.textContent = trend.hashtag;
+                detailPostsLabel.textContent = 'Posts';
+            } else {
+                detailTitle.textContent = trend.song_name;
+                if (trend.artist) {
+                    detailTitle.textContent += ` - ${trend.artist}`;
+                }
+                detailPostsLabel.textContent = 'Videos';
+            }
+            
+            detailStatus.textContent = trend.status || 'stable';
+            detailStatus.className = `trend-status status-${trend.status || 'stable'}`;
+            
+            detailRank.textContent = trend.rank || '-';
+            detailPosts.textContent = trend.post_count || 'N/A';
+            
+            const growthArrow = trend.growth >= 0 ? '↑' : '↓';
+            detailGrowth.textContent = `${growthArrow} ${Math.abs(trend.growth || 0)}%`;
+            detailGrowth.className = trend.growth >= 0 ? 'growth-positive' : 'growth-negative';
+            
+            // Set chart image if available
+            if (trend.chart_image) {
+                chartImage.src = trend.chart_image;
+                chartImage.style.display = 'block';
+                
+                // Provide chart analysis based on status
+                switch(trend.status) {
+                    case 'rising':
+                        chartAnalysis.textContent = 
+                            `This trend is showing strong upward momentum with a growth rate of ${trend.growth}%. ` +
+                            `The chart pattern suggests this trend is in its early growth phase and likely to continue gaining popularity.`;
+                        break;
+                    case 'peaked':
+                        chartAnalysis.textContent = 
+                            `This trend has reached peak popularity with a growth rate of ${trend.growth}%. ` +
+                            `The chart pattern shows strong recent performance but may be approaching saturation. ` +
+                            `Now would be an optimal time to create content around this trend.`;
+                        break;
+                    case 'stable':
+                        chartAnalysis.textContent = 
+                            `This trend is showing stable performance with a growth rate of ${trend.growth}%. ` +
+                            `The chart pattern indicates consistent engagement, suggesting this trend has established staying power.`;
+                        break;
+                    case 'falling':
+                        chartAnalysis.textContent = 
+                            `This trend appears to be declining with a growth rate of ${trend.growth}%. ` +
+                            `The chart pattern shows diminishing engagement, suggesting this trend is past its peak.`;
+                        break;
+                    default:
+                        chartAnalysis.textContent = 
+                            `This chart shows the trend's performance over time. The current growth rate is ${trend.growth}%.`;
+                }
+            } else {
+                chartImage.style.display = 'none';
+                chartAnalysis.textContent = 'Chart data not available for this trend.';
+            }
+        }
+        
+        // Clear selection
+        function clearSelection() {
+            selectedTrend = null;
+            selectedTrendType = null;
+            
+            // Hide details content
+            document.getElementById('trend-details-content').style.display = 'none';
+            document.getElementById('no-selection').style.display = 'block';
+            
+            // Remove active class from all items
+            document.querySelectorAll('.trend-item').forEach(el => {
+                el.classList.remove('active');
             });
         }
     </script>
