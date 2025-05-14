@@ -1,0 +1,1058 @@
+<div class="container">
+        <div class="dashboard-header">
+            <div class="filters">
+                <div class="filter-group">
+                    <span class="filter-label">Timeframe:</span>
+                    <select id="timeframe">
+                        <option value="7">Last 7 Days</option>
+                        <option value="30">Last 30 Days</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <span class="filter-label">Growth Rate:</span>
+                    <select id="growth-filter">
+                        <option value="all">All Growth Rates</option>
+                        <option value="rising">Rising (>50%)</option>
+                        <option value="viral">Viral (>200%)</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <span class="filter-label">Sort By:</span>
+                    <select id="sort-by">
+                        <option value="rank">Default Ranking</option>
+                        <option value="growth">Growth Rate</option>
+                        <option value="posts">Post Count</option>
+                    </select>
+                </div>
+                
+                <button id="update-filters">Apply Filters</button>
+            </div>
+        </div>
+        
+                
+                <div class="dashboard">
+                    <!-- Trend Velocity Matrix - Visualizes growth vs. volume -->
+                    <div class="card col-12 trend-velocity-card">
+                        <h2><span class="card-header-icon">📊</span> Trend Velocity Matrix</h2>
+                        <div class="matrix-container" id="trend-matrix">
+                            <div class="axes-labels">
+                                <div class="x-axis left">Lower Growth</div>
+                                <div class="x-axis right">Higher Growth</div>
+                                <div class="y-axis top">Higher Volume</div>
+                                <div class="y-axis bottom">Lower Volume</div>
+                            </div>
+                            <div class="matrix-quadrants">
+                                <div class="quadrant">Established Trends</div>
+                                <div class="quadrant">Viral Hits</div>
+                                <div class="quadrant">Niche Content</div>
+                                <div class="quadrant">Emerging Trends</div>
+                            </div>
+                            <!-- Trend bubbles will be dynamically added here -->
+                        </div>
+                        <div class="legend">
+                            <div class="legend-item">
+                                <div class="legend-color legend-hashtag"></div>
+                                Hashtags
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color legend-song"></div>
+                                Songs
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Top Trending Hashtags -->
+                    <div class="card col-6">
+                        <h2><span class="card-header-icon">#</span> Top Trending Hashtags</h2>
+                        <div class="tabs">
+                            <div class="tab active" data-tab="hashtags-list">List View</div>
+                            <div class="tab" data-tab="hashtags-chart">Growth Chart</div>
+                        </div>
+                        <div id="hashtags-list" class="tab-content">
+                            <ul class="trend-list" id="hashtags-list-container">
+                                <!-- Dynamically populated -->
+                            </ul>
+                        </div>
+                        <div id="hashtags-chart" class="tab-content" style="display: none;">
+                            <div class="chart-container" id="hashtags-growth-chart"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Top Trending Songs -->
+                    <div class="card col-6">
+                        <h2><span class="card-header-icon">♪</span> Top Trending Songs</h2>
+                        <div class="tabs">
+                            <div class="tab active" data-tab="songs-list">List View</div>
+                            <div class="tab" data-tab="songs-chart">Growth Chart</div>
+                        </div>
+                        <div id="songs-list" class="tab-content">
+                            <ul class="trend-list" id="songs-list-container">
+                                <!-- Dynamically populated -->
+                            </ul>
+                        </div>
+                        <div id="songs-chart" class="tab-content" style="display: none;">
+                            <div class="chart-container" id="songs-growth-chart"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Demographic Insights -->
+                    <div class="card col-6">
+                        <h2><span class="card-header-icon">👥</span> Audience Demographics</h2>
+                        <div class="tabs">
+                            <div class="tab active" data-tab="demographics-age">Age Groups</div>
+                            <div class="tab" data-tab="demographics-regions">Regions</div>
+                        </div>
+                        <div id="demographics-age" class="tab-content">
+                            <div class="chart-container" id="age-chart"></div>
+                        </div>
+                        <div id="demographics-regions" class="tab-content" style="display: none;">
+                            <div class="chart-container" id="regions-chart"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Trend Networks -->
+                    <div class="card col-6">
+                        <h2><span class="card-header-icon">🔄</span> Related Content Networks</h2>
+                        <div class="tabs">
+                            <div class="tab active" data-tab="related-hashtags">Related Hashtags</div>
+                            <div class="tab" data-tab="related-videos">Related Videos</div>
+                        </div>
+                        <div id="related-hashtags" class="tab-content">
+                            <div id="related-hashtags-container" class="related-content-network">
+                                <!-- Dynamically populated -->
+                            </div>
+                        </div>
+                        <div id="related-videos" class="tab-content" style="display: none;">
+                            <ul class="trend-list" id="related-videos-container">
+                                <!-- Dynamically populated -->
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Trend Lifecycle Analysis -->
+                    <div class="card col-12">
+                        <h2><span class="card-header-icon">📈</span> Trend Lifecycle Analysis</h2>
+                        <div class="chart-container" id="lifecycle-chart"></div>
+                    </div>
+                    
+                    <!-- Breakout Content -->
+                    <div class="card col-6">
+                        <h2><span class="card-header-icon">🚀</span> Breakout Content</h2>
+                        <div class="tabs">
+                            <div class="tab active" data-tab="breakout-songs">Songs</div>
+                            <div class="tab" data-tab="breakout-hashtags">Hashtags</div>
+                        </div>
+                        <div id="breakout-songs" class="tab-content">
+                            <ul class="trend-list" id="breakout-songs-container">
+                                <!-- Dynamically populated -->
+                            </ul>
+                        </div>
+                        <div id="breakout-hashtags" class="tab-content" style="display: none;">
+                            <ul class="trend-list" id="breakout-hashtags-container">
+                                <!-- Dynamically populated -->
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Trend Details Panel -->
+                    <div class="card col-6" id="trend-details-card">
+                        <h2><span class="card-header-icon">🔍</span> <span id="trend-details-title">Trend Details</span></h2>
+                        <div id="trend-details-content">
+                            <p class="select-trend-prompt">Click on any trend to see detailed information</p>
+                        </div>
+                    </div>
+                </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <script>
+        // We'll load data from external JSON file
+        let trendData = {
+            hashtags: { '7days': [], '30days': [] },
+            songs: { 'trending': [], 'breakout': [] }
+        };
+        
+        // Function to load the data
+        async function loadTrendData() {
+            try {
+                const response = await fetch('trendData.json');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                
+                // Process hashtags data
+                if (data.hashtags_7d) {
+                    trendData.hashtags['7days'] = data.hashtags_7d.map((item, index) => {
+                        return {
+                            name: item.hashtag || `#unknown${index}`,
+                            rank: index + 1,
+                            post_count: parsePostCount(item.post_count),
+                            growth: Math.floor(Math.random() * 300) + 20, // Placeholder for growth %
+                            chart_image: item.chart_image,
+                            status: getRandomStatus()
+                        };
+                    });
+                }
+                
+                if (data.hashtags_30d) {
+                    trendData.hashtags['30days'] = data.hashtags_30d.map((item, index) => {
+                        return {
+                            name: item.hashtag || `#unknown${index}`,
+                            rank: index + 1,
+                            post_count: parsePostCount(item.post_count),
+                            growth: Math.floor(Math.random() * 300) + 20, // Placeholder for growth %
+                            chart_image: item.chart_image,
+                            status: getRandomStatus()
+                        };
+                    });
+                }
+                
+                // Process songs data
+                if (data.trending_songs) {
+                    trendData.songs['trending'] = data.trending_songs.map((item, index) => {
+                        return {
+                            name: item.song_name || `Unknown Song ${index}`,
+                            artist: item.artist || 'Unknown Artist',
+                            rank: index + 1,
+                            videos: parsePostCount(item.post_count),
+                            growth: Math.floor(Math.random() * 300) + 20, // Placeholder for growth %
+                            chart_image: item.chart_image,
+                            status: getRandomStatus()
+                        };
+                    });
+                }
+                
+                if (data.breakout_songs) {
+                    trendData.songs['breakout'] = data.breakout_songs.map((item, index) => {
+                        return {
+                            name: item.song_name || `Unknown Song ${index}`,
+                            artist: item.artist || 'Unknown Artist',
+                            rank: index + 1,
+                            videos: parsePostCount(item.post_count),
+                            growth: Math.floor(Math.random() * 500) + 200, // Higher growth for breakout
+                            chart_image: item.chart_image,
+                            status: 'rising' // Breakout songs are always rising
+                        };
+                    });
+                }
+                
+                // Update the dashboard
+                updateDashboard();
+                
+                // Update the date display
+                document.querySelector('.date').textContent = `Data updated: ${new Date().toLocaleDateString()}`;
+                
+            } catch (error) {
+                console.error('Error loading data:', error);
+                // Use sample data if fetch fails
+                initializeSampleData();
+                updateDashboard();
+            }
+        }
+        
+        // Helper function to parse post counts
+        function parsePostCount(countStr) {
+            if (!countStr) return Math.floor(Math.random() * 10000000) + 100000; // Random fallback
+            
+            if (typeof countStr === 'number') return countStr;
+            
+            // Handle formatted strings like "1.2M", "432.5K", etc.
+            const str = countStr.toString().trim().toUpperCase();
+            let multiplier = 1;
+            
+            if (str.endsWith('K')) {
+                multiplier = 1000;
+            } else if (str.endsWith('M')) {
+                multiplier = 1000000;
+            } else if (str.endsWith('B')) {
+                multiplier = 1000000000;
+            }
+            
+            const numPart = str.replace(/[KMB]/g, '');
+            const num = parseFloat(numPart);
+            
+            if (isNaN(num)) return Math.floor(Math.random() * 10000000) + 100000; // Random fallback
+            return Math.floor(num * multiplier);
+        }
+        
+        // Helper function to get status for demo data
+        function getRandomStatus() {
+            const statuses = ['rising', 'peaked', 'falling', 'new'];
+            const weights = [0.5, 0.2, 0.2, 0.1]; // More rising than others
+            
+            let random = Math.random();
+            let sum = 0;
+            
+            for (let i = 0; i < weights.length; i++) {
+                sum += weights<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok Trend Analyzer</title>
+    <style>
+        :root {
+            --primary: #FE2C55;
+            --secondary: #25F4EE;
+            --dark: #121212;
+            --darker: #000000;
+            --light: #F8F8F8;
+            --light-gray: #e8e8e8;
+            --text: #333333;
+            --accent: #69C9D0;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light);
+            color: var(--text);
+        }
+        
+        header {
+            background: linear-gradient(to right, var(--darker), var(--dark));
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo-icon {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+        
+        .filters {
+            background-color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .filter-label {
+            font-weight: 500;
+            color: var(--dark);
+        }
+        
+        select, button {
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 0.95rem;
+            font-family: inherit;
+        }
+        
+        select {
+            background-color: white;
+            min-width: 150px;
+        }
+        
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 600;
+        }
+        
+        button:hover {
+            background-color: #e62a4d;
+            transform: translateY(-1px);
+        }
+        
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .col-6 {
+            grid-column: span 6;
+        }
+        
+        .col-12 {
+            grid-column: span 12;
+        }
+        
+        .col-4 {
+            grid-column: span 4;
+        }
+        
+        .col-8 {
+            grid-column: span 8;
+        }
+        
+        @media (max-width: 1200px) {
+            .col-4, .col-6 {
+                grid-column: span 6;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .col-4, .col-6, .col-8 {
+                grid-column: span 12;
+            }
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            padding: 1.5rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card h2 {
+            margin-top: 0;
+            font-size: 1.25rem;
+            color: var(--dark);
+            padding-bottom: 0.75rem;
+            margin-bottom: 1.25rem;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .card-header-icon {
+            color: var(--primary);
+            font-size: 1.2em;
+        }
+        
+        .trend-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            flex-grow: 1;
+            overflow-y: auto;
+            max-height: 500px;
+        }
+        
+        .trend-item {
+            padding: 1rem;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.2s;
+        }
+        
+        .trend-item:hover {
+            background-color: rgba(254, 44, 85, 0.05);
+        }
+        
+        .trend-item:last-child {
+            border-bottom: none;
+        }
+        
+        .trend-rank {
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+        
+        .trend-info {
+            flex-grow: 1;
+        }
+        
+        .trend-name {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .trend-meta {
+            display: flex;
+            font-size: 0.85rem;
+            color: #666;
+            gap: 1rem;
+        }
+        
+        .trend-metrics {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .metric {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 80px;
+        }
+        
+        .metric-value {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+        
+        .metric-label {
+            font-size: 0.75rem;
+            color: #777;
+        }
+        
+        .trend-status {
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            margin-left: 0.75rem;
+        }
+        
+        .status-new {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+        
+        .status-rising {
+            background-color: #00C48C;
+            color: white;
+        }
+        
+        .status-peaked {
+            background-color: #F7B801;
+            color: var(--dark);
+        }
+        
+        .status-falling {
+            background-color: #FF5959;
+            color: white;
+        }
+        
+        .chart-container {
+            height: 280px;
+            width: 100%;
+            margin-top: 1rem;
+        }
+        
+        .matrix-container {
+            height: 500px;
+            position: relative;
+        }
+        
+        .trend-growth-indicator {
+            display: inline-flex;
+            align-items: center;
+            font-weight: 500;
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+        }
+        
+        .growth-positive {
+            color: #00C48C;
+        }
+        
+        .growth-negative {
+            color: #FF5959;
+        }
+        
+        .growth-icon {
+            margin-right: 0.3rem;
+        }
+        
+        .breakout-label {
+            background-color: var(--primary);
+            color: white;
+            font-size: 0.7rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            margin-left: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid var(--light-gray);
+            margin-bottom: 1.5rem;
+        }
+        
+        .tab {
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            font-weight: 500;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab.active {
+            border-bottom-color: var(--primary);
+            color: var(--primary);
+        }
+        
+        .scroll-container {
+            overflow-x: auto;
+            width: 100%;
+            padding-bottom: 1rem;
+        }
+        
+        .trend-velocity-card {
+            padding-bottom: 2rem;
+        }
+        
+        .trend-bubble {
+            position: absolute;
+            background-color: rgba(254, 44, 85, 0.8);
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .trend-bubble:hover {
+            transform: scale(1.1);
+            z-index: 10;
+        }
+        
+        .song-bubble {
+            background-color: rgba(37, 244, 238, 0.8);
+        }
+        
+        .axes-labels {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        
+        .x-axis, .y-axis {
+            position: absolute;
+            color: #777;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .x-axis.left {
+            bottom: 10px;
+            left: 10px;
+        }
+        
+        .x-axis.right {
+            bottom: 10px;
+            right: 10px;
+        }
+        
+        .y-axis.top {
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .y-axis.bottom {
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .matrix-quadrants {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            pointer-events: none;
+        }
+        
+        .quadrant {
+            border: 1px dashed rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(0,0,0,0.2);
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .legend {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #666;
+        }
+        
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+        
+        .legend-hashtag {
+            background-color: rgba(254, 44, 85, 0.8);
+        }
+        
+        .legend-song {
+            background-color: rgba(37, 244, 238, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="logo-icon">♪</span>
+            TikTok Trend Analyzer
+        </div>
+        <div class="date">Data updated: May 13, 2025</div>
+    </header>
+    
+    <div class="container">
+        <div class="filters">
+            <div class="filter-group">
+                <label for="timeframe">Timeframe:</label>
+                <select id="timeframe">
+                    <option value="7">Last 7 Days</option>
+                    <option value="30">Last 30 Days</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="category">Category:</label>
+                <select id="category">
+                    <option value="all">All Categories</option>
+                    <option value="drink">Drink Related</option>
+                    <option value="lifestyle">Lifestyle</option>
+                    <option value="wellness">Wellness</option>
+                </select>
+            </div>
+            
+            <button id="update-filters">Apply Filters</button>
+        </div>
+        
+        <div class="dashboard">
+            <div class="card">
+                <h2>Top Trending Hashtags</h2>
+                <div id="hashtags-chart" class="chart-container"></div>
+                <ul class="trend-list" id="hashtags-list">
+                    <li class="trend-item">
+                        <span class="trend-name">#summercocktails</span>
+                        <span class="trend-category category-drink">Drink</span>
+                        <span class="trend-metric">+254%</span>
+                    </li>
+                    <li class="trend-item">
+                        <span class="trend-name">#mocktailmonday</span>
+                        <span class="trend-category category-drink">Drink</span>
+                        <span class="trend-metric">+187%</span>
+                    </li>
+                    <li class="trend-item">
+                        <span class="trend-name">#cleanliving</span>
+                        <span class="trend-category category-wellness">Wellness</span>
+                        <span class="trend-metric">+142%</span>
+                    </li>
+                    <li class="trend-item">
+                        <span class="trend-name">#sunsetvibes</span>
+                        <span class="trend-category category-lifestyle">Lifestyle</span>
+                        <span class="trend-metric">+98%</span>
+                    </li>
+                    <li class="trend-item">
+                        <span class="trend-name">#mindfulmoments</span>
+                        <span class="trend-category category-wellness">Wellness</span>
+                        <span class="trend-metric">+76%</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h2>Top Trending Songs</h2>
+                <div id="songs-chart" class="chart-container"></div>
+                <ul class="trend-list" id="songs-list">
+                    <li class="trend-item">
+                        <span class="trend-name">"Summer Feelings" - Lennon Stella</span>
+                        <span class="trend-metric">432K videos</span>
+                    </li>
+                    <li class="trend-item">
+                        <span class="trend-name">"Sunset Dreaming" - Solar Collective</span>
+                        <span class="trend-metric">318K videos</span>
+                    </li>
+                    <li class="trend-item">
+                        <span class="trend-name">"Chill Wave" - Ocean Vibrations</span>
+                        <span class="trend-metric">276K videos</span>
+                    </li>
+                    <li class="trend-item">
+                        <span class="trend-name">"Clear Mind" - Zen Masters</span>
+                        <span class="trend-metric">204K videos</span>
+                    </li>
+                    <li class="trend-item">
+                        <span class="trend-name">"Fresh Start" - Morning Ritual</span>
+                        <span class="trend-metric">187K videos</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="card insights-container">
+                <h2>Marketing Insights for Aplos</h2>
+                
+                <div class="insight-item">
+                    <div class="insight-icon">💡</div>
+                    <div class="insight-content">
+                        <h3>Wellness Cocktail Opportunity</h3>
+                        <p>There's a growing intersection between wellness content and mocktail recipes. Content featuring mindful drinking and wellness-focused beverages is up 176% this month.</p>
+                        <div class="related-trends">
+                            <span class="related-trend-tag">#cleanliving</span>
+                            <span class="related-trend-tag">#mocktailmonday</span>
+                            <span class="related-trend-tag">#mindfuldrinking</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="insight-item">
+                    <div class="insight-icon">🌅</div>
+                    <div class="insight-content">
+                        <h3>Sunset Social Hour Content</h3>
+                        <p>Creators are seeing 43% higher engagement with content featuring drinks at sunset. The relaxing transition from day to night aligns perfectly with Aplos' positioning.</p>
+                        <div class="related-trends">
+                            <span class="related-trend-tag">#sunsetvibes</span>
+                            <span class="related-trend-tag">#eveningrituals</span>
+                            <span class="related-trend-tag">"Sunset Dreaming"</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="insight-item">
+                    <div class="insight-icon">🎵</div>
+                    <div class="insight-content">
+                        <h3>Music-Pairing Trend</h3>
+                        <p>A new content format pairing specific drinks with mood-enhancing music is gaining traction, with 87% growth in the past week alone.</p>
+                        <div class="related-trends">
+                            <span class="related-trend-tag">"Chill Wave"</span>
+                            <span class="related-trend-tag">#drinkandvibe</span>
+                            <span class="related-trend-tag">#soundsipping</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <script>
+        // We'll load data from external JSON file
+        let trendData = {
+            hashtags: { '7days': [], '30days': [] },
+            songs: { '7days': [], '30days': [] }
+        };
+        
+        // Function to load the data
+        async function loadTrendData() {
+            try {
+                const response = await fetch('trendData.json');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                trendData = await response.json();
+                // Update the dashboard with the loaded data
+                updateDashboard();
+                // Update the date display
+                document.querySelector('.date').textContent = `Data updated: ${new Date().toLocaleDateString()}`;
+            } catch (error) {
+                console.error('Error loading data:', error);
+                alert('Error loading trend data. Please try again later.');
+            }
+        }
+        
+        // Initialize charts and lists
+        let hashtagsChart, songsChart;
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load data first
+            loadTrendData();
+            
+            // Setup charts (will be populated once data loads)
+            setupCharts();
+            
+            // Handle filter changes
+            document.getElementById('update-filters').addEventListener('click', function() {
+                updateDashboard();
+            });
+        });
+        
+        function setupCharts() {
+            // Setup hashtag chart
+            const hashtagsChartCtx = document.getElementById('hashtags-chart').getContext('2d');
+            hashtagsChart = new Chart(hashtagsChartCtx, {
+                type: 'bar',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: 'Growth %',
+                        data: [],
+                        backgroundColor: '#2E5EAA',
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Growth %'
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Setup songs chart
+            const songsChartCtx = document.getElementById('songs-chart').getContext('2d');
+            songsChart = new Chart(songsChartCtx, {
+                type: 'bar',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: 'Videos',
+                        data: [],
+                        backgroundColor: '#74D8AE',
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.raw + 'K videos';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Videos (thousands)'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        
+        function updateDashboard() {
+            const timeframe = document.getElementById('timeframe').value;
+            const category = document.getElementById('category').value;
+            
+            // Filter data based on selections
+            let filteredHashtags = [...(trendData.hashtags[timeframe + 'days'] || [])];
+            if (category !== 'all') {
+                filteredHashtags = filteredHashtags.filter(item => item.category === category);
+            }
+            
+            // Update hashtags chart
+            hashtagsChart.data.labels = filteredHashtags.map(item => item.name);
+            hashtagsChart.data.datasets[0].data = filteredHashtags.map(item => item.growth);
+            hashtagsChart.update();
+            
+            // Update hashtags list
+            const hashtagsList = document.getElementById('hashtags-list');
+            hashtagsList.innerHTML = '';
+            filteredHashtags.forEach(item => {
+                hashtagsList.innerHTML += `
+                    <li class="trend-item">
+                        <span class="trend-name">${item.name}</span>
+                        <span class="trend-category category-${item.category}">${item.category.charAt(0).toUpperCase() + item.category.slice(1)}</span>
+                        <span class="trend-metric">+${item.growth}%</span>
+                    </li>
+                `;
+            });
+            
+            // Update songs chart with available data
+            const songData = trendData.songs[timeframe + 'days'] || [];
+            songsChart.data.labels = songData.map(item => item.name.length > 20 ? item.name.substring(0, 20) + '...' : item.name);
+            songsChart.data.datasets[0].data = songData.map(item => item.videos/1000);
+            songsChart.update();
+            
+            // Update songs list
+            const songsList = document.getElementById('songs-list');
+            songsList.innerHTML = '';
+            songData.forEach(item => {
+                const videosFormatted = item.videos >= 1000000 ? 
+                    (item.videos / 1000000).toFixed(1) + 'M' : 
+                    (item.videos / 1000).toFixed(0) + 'K';
+                
+                songsList.innerHTML += `
+                    <li class="trend-item">
+                        <span class="trend-name">${item.name}</span>
+                        <span class="trend-metric">${videosFormatted} videos</span>
+                    </li>
+                `;
+            });
+        }
+    </script>
+    </script>
+</body>
+</html>
