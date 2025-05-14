@@ -11,11 +11,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 1000000.0,
-      "period_momentum": "steady",
-      "categories": [
-        "family"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "steady"
     },
     {
       "hashtag": "# happymothersday",
@@ -28,11 +24,7 @@
       "growth_rate": 0,
       "trend_status": "trending",
       "numeric_post_count": 334000.0,
-      "period_momentum": "accelerating",
-      "categories": [
-        "family"
-      ],
-      "lifecycle_stage": "growing"
+      "period_momentum": "accelerating"
     },
     {
       "hashtag": "# mama",
@@ -45,11 +37,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 371000.0,
-      "period_momentum": "accelerating",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "accelerating"
     },
     {
       "hashtag": "# mom",
@@ -62,11 +50,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 327000.0,
-      "period_momentum": "decelerating",
-      "categories": [
-        "family"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "decelerating"
     },
     {
       "hashtag": "# felizdiadelasmadres",
@@ -79,11 +63,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 210000.0,
-      "period_momentum": "decelerating",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "decelerating"
     },
     {
       "hashtag": "# mother",
@@ -96,11 +76,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 151000.0,
-      "period_momentum": "decelerating",
-      "categories": [
-        "family"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "decelerating"
     },
     {
       "hashtag": "# mamá",
@@ -113,11 +89,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 166000.0,
-      "period_momentum": "decelerating",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "decelerating"
     },
     {
       "hashtag": "# madre",
@@ -130,11 +102,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 131000.0,
-      "period_momentum": "decelerating",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "decelerating"
     },
     {
       "hashtag": "# laliga",
@@ -147,11 +115,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 100000.0,
-      "period_momentum": "decelerating",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "decelerating"
     },
     {
       "hashtag": "# motherhood",
@@ -164,11 +128,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 131000.0,
-      "period_momentum": "decelerating",
-      "categories": [
-        "family"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "decelerating"
     },
     {
       "hashtag": "# elclasico",
@@ -181,11 +141,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 54000.0,
-      "period_momentum": "decelerating",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "decelerating"
     },
     {
       "hashtag": "# mbappe",
@@ -198,11 +154,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 70000.0,
-      "period_momentum": "decelerating",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "decelerating"
     },
     {
       "hashtag": "# diadelamadre",
@@ -215,11 +167,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 104000.0,
-      "period_momentum": "decelerating",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "decelerating"
     },
     {
       "hashtag": "# madres",
@@ -232,11 +180,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 69000.0,
-      "period_momentum": "decelerating",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "decelerating"
     },
     {
       "hashtag": "# felizdiamama",
@@ -249,11 +193,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 54000.0,
-      "period_momentum": "decelerating",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "decelerating"
     },
     {
       "hashtag": "# mothersday2025",
@@ -266,11 +206,7 @@
       "growth_rate": 0,
       "trend_status": "rising",
       "numeric_post_count": 51000.0,
-      "period_momentum": "decelerating",
-      "categories": [
-        "family"
-      ],
-      "lifecycle_stage": "rising"
+      "period_momentum": "decelerating"
     },
     {
       "hashtag": "# felizdia",
@@ -283,11 +219,7 @@
       "growth_rate": 0,
       "trend_status": "trending",
       "numeric_post_count": 43000.0,
-      "period_momentum": "decelerating",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "growing"
+      "period_momentum": "decelerating"
     },
     {
       "hashtag": "# mothersdaygift",
@@ -300,11 +232,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 93000.0,
-      "period_momentum": "decelerating",
-      "categories": [
-        "family"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "decelerating"
     },
     {
       "hashtag": "# diadasmaes",
@@ -317,11 +245,7 @@
       "growth_rate": 0,
       "trend_status": "rising",
       "numeric_post_count": 580000.0,
-      "period_momentum": "decelerating",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "rising"
+      "period_momentum": "decelerating"
     },
     {
       "hashtag": "# mothers",
@@ -334,11 +258,7 @@
       "growth_rate": 0,
       "trend_status": "rising",
       "numeric_post_count": 40000.0,
-      "period_momentum": "decelerating",
-      "categories": [
-        "family"
-      ],
-      "lifecycle_stage": "rising"
+      "period_momentum": "decelerating"
     },
     {
       "hashtag": "# clasico",
@@ -351,11 +271,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 46000.0,
-      "period_momentum": "new",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "new"
     },
     {
       "hashtag": "# mami",
@@ -368,11 +284,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 50000.0,
-      "period_momentum": "new",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "new"
     },
     {
       "hashtag": "# diadelasmadres",
@@ -385,11 +297,7 @@
       "growth_rate": 0,
       "trend_status": "falling",
       "numeric_post_count": 425000.0,
-      "period_momentum": "decelerating",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "declining"
+      "period_momentum": "decelerating"
     },
     {
       "hashtag": "# motherdaughter",
@@ -402,11 +310,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 34000.0,
-      "period_momentum": "new",
-      "categories": [
-        "family"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "new"
     },
     {
       "hashtag": "# motherday",
@@ -419,11 +323,7 @@
       "growth_rate": 0,
       "trend_status": "rising",
       "numeric_post_count": 29000.0,
-      "period_momentum": "new",
-      "categories": [
-        "family"
-      ],
-      "lifecycle_stage": "rising"
+      "period_momentum": "new"
     },
     {
       "hashtag": "# amordemadre",
@@ -436,11 +336,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 41000.0,
-      "period_momentum": "new",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "new"
     },
     {
       "hashtag": "# prettylittlebaby",
@@ -453,11 +349,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 63000.0,
-      "period_momentum": "accelerating",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "accelerating"
     },
     {
       "hashtag": "# mommy",
@@ -470,11 +362,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 38000.0,
-      "period_momentum": "new",
-      "categories": [
-        "family"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "new"
     },
     {
       "hashtag": "# capcutfamília",
@@ -487,11 +375,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 400000.0,
-      "period_momentum": "new",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "new"
     },
     {
       "hashtag": "# growagarden",
@@ -504,11 +388,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 40000.0,
-      "period_momentum": "accelerating",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "accelerating"
     },
     {
       "hashtag": "# maa",
@@ -521,11 +401,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 27000.0,
-      "period_momentum": "accelerating",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "accelerating"
     },
     {
       "hashtag": "# happymothersday_all_mom",
@@ -538,11 +414,7 @@
       "growth_rate": 0,
       "trend_status": "rising",
       "numeric_post_count": 23000.0,
-      "period_momentum": "new",
-      "categories": [
-        "family"
-      ],
-      "lifecycle_stage": "rising"
+      "period_momentum": "new"
     },
     {
       "hashtag": "# motherslove",
@@ -555,11 +427,7 @@
       "growth_rate": 0,
       "trend_status": "rising",
       "numeric_post_count": 21000.0,
-      "period_momentum": "new",
-      "categories": [
-        "family"
-      ],
-      "lifecycle_stage": "rising"
+      "period_momentum": "new"
     },
     {
       "hashtag": "# mum",
@@ -572,11 +440,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 31000.0,
-      "period_momentum": "new",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "new"
     },
     {
       "hashtag": "# madreehija",
@@ -589,11 +453,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 27000.0,
-      "period_momentum": "new",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "new"
     },
     {
       "hashtag": "# happymotherday",
@@ -606,11 +466,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 18000.0,
-      "period_momentum": "new",
-      "categories": [
-        "family"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "new"
     },
     {
       "hashtag": "# motherlove",
@@ -623,11 +479,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 18000.0,
-      "period_momentum": "new",
-      "categories": [
-        "family"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "new"
     },
     {
       "hashtag": "# mothersdayspecial",
@@ -640,11 +492,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 19000.0,
-      "period_momentum": "new",
-      "categories": [
-        "family"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "new"
     },
     {
       "hashtag": "# diadasmães",
@@ -657,11 +505,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 118000.0,
-      "period_momentum": "new",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "new"
     },
     {
       "hashtag": "# classico",
@@ -674,11 +518,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 11000.0,
-      "period_momentum": "new",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "new"
     },
     {
       "hashtag": "# moms",
@@ -691,11 +531,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 16000.0,
-      "period_momentum": "new",
-      "categories": [
-        "family"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "new"
     },
     {
       "hashtag": "# mae",
@@ -708,11 +544,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 111000.0,
-      "period_momentum": "new",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "new"
     },
     {
       "hashtag": "# tiktokautocampaign",
@@ -725,11 +557,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 20000.0,
-      "period_momentum": "new",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "new"
     },
     {
       "hashtag": "# loveyoumom",
@@ -742,11 +570,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 11000.0,
-      "period_momentum": "new",
-      "categories": [
-        "family"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "new"
     },
     {
       "hashtag": "# elclassico",
@@ -759,11 +583,7 @@
       "growth_rate": 0,
       "trend_status": "stable",
       "numeric_post_count": 7000.0,
-      "period_momentum": "new",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "period_momentum": "new"
     }
   ],
   "hashtags_30d": [
@@ -776,11 +596,7 @@
       "ranking_direction": "stable",
       "ranking_change": 0,
       "numeric_post_count": 1000000.0,
-      "trend_status": "stable",
-      "categories": [
-        "family"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# mom",
@@ -791,11 +607,7 @@
       "ranking_direction": "stable",
       "ranking_change": 0,
       "numeric_post_count": 327000.0,
-      "trend_status": "stable",
-      "categories": [
-        "family"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# felizdiadelasmadres",
@@ -805,11 +617,7 @@
       "timeframe": "30d",
       "ranking_direction": "up",
       "ranking_change": 1,
-      "numeric_post_count": 210000.0,
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "numeric_post_count": 210000.0
     },
     {
       "hashtag": "# mother",
@@ -820,11 +628,7 @@
       "ranking_direction": "stable",
       "ranking_change": 0,
       "numeric_post_count": 151000.0,
-      "trend_status": "stable",
-      "categories": [
-        "family"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# mamá",
@@ -834,11 +638,7 @@
       "timeframe": "30d",
       "ranking_direction": "up",
       "ranking_change": 1,
-      "numeric_post_count": 166000.0,
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "numeric_post_count": 166000.0
     },
     {
       "hashtag": "# madre",
@@ -848,11 +648,7 @@
       "timeframe": "30d",
       "ranking_direction": "up",
       "ranking_change": 4,
-      "numeric_post_count": 131000.0,
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "numeric_post_count": 131000.0
     },
     {
       "hashtag": "# laliga",
@@ -863,11 +659,7 @@
       "ranking_direction": "stable",
       "ranking_change": 0,
       "numeric_post_count": 100000.0,
-      "trend_status": "stable",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# motherhood",
@@ -878,11 +670,7 @@
       "ranking_direction": "stable",
       "ranking_change": 0,
       "numeric_post_count": 131000.0,
-      "trend_status": "stable",
-      "categories": [
-        "family"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# elclasico",
@@ -893,11 +681,7 @@
       "ranking_direction": "stable",
       "ranking_change": 0,
       "numeric_post_count": 54000.0,
-      "trend_status": "stable",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# mbappe",
@@ -908,11 +692,7 @@
       "ranking_direction": "stable",
       "ranking_change": 0,
       "numeric_post_count": 70000.0,
-      "trend_status": "stable",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# diadelamadre",
@@ -922,11 +702,7 @@
       "timeframe": "30d",
       "ranking_direction": "up",
       "ranking_change": 4,
-      "numeric_post_count": 104000.0,
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "numeric_post_count": 104000.0
     },
     {
       "hashtag": "# madres",
@@ -936,11 +712,7 @@
       "timeframe": "30d",
       "ranking_direction": "up",
       "ranking_change": 5,
-      "numeric_post_count": 69000.0,
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "numeric_post_count": 69000.0
     },
     {
       "hashtag": "# felizdiamama",
@@ -951,11 +723,7 @@
       "ranking_direction": "stable",
       "ranking_change": 0,
       "numeric_post_count": 54000.0,
-      "trend_status": "stable",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# mothersday2025",
@@ -966,11 +734,7 @@
       "ranking_direction": "up",
       "ranking_change": 13,
       "numeric_post_count": 51000.0,
-      "trend_status": "rising",
-      "categories": [
-        "family"
-      ],
-      "lifecycle_stage": "rising"
+      "trend_status": "rising"
     },
     {
       "hashtag": "# felizdia",
@@ -981,11 +745,7 @@
       "ranking_direction": "up",
       "ranking_change": 6,
       "numeric_post_count": 43000.0,
-      "trend_status": "trending",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "growing"
+      "trend_status": "trending"
     },
     {
       "hashtag": "# mothersdaygift",
@@ -996,11 +756,7 @@
       "ranking_direction": "stable",
       "ranking_change": 0,
       "numeric_post_count": 93000.0,
-      "trend_status": "stable",
-      "categories": [
-        "family"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# diadasmaes",
@@ -1011,11 +767,7 @@
       "ranking_direction": "up",
       "ranking_change": 12,
       "numeric_post_count": 580000.0,
-      "trend_status": "rising",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "rising"
+      "trend_status": "rising"
     },
     {
       "hashtag": "# mothers",
@@ -1026,11 +778,7 @@
       "ranking_direction": "up",
       "ranking_change": 14,
       "numeric_post_count": 40000.0,
-      "trend_status": "rising",
-      "categories": [
-        "family"
-      ],
-      "lifecycle_stage": "rising"
+      "trend_status": "rising"
     },
     {
       "hashtag": "# diadelasmadres",
@@ -1040,11 +788,7 @@
       "timeframe": "30d",
       "ranking_direction": "up",
       "ranking_change": 2,
-      "numeric_post_count": 540000.0,
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "numeric_post_count": 540000.0
     },
     {
       "hashtag": "# miamistad",
@@ -1055,11 +799,7 @@
       "ranking_direction": "down",
       "ranking_change": 1,
       "numeric_post_count": 469000.0,
-      "trend_status": "stable",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# inter",
@@ -1070,11 +810,7 @@
       "ranking_direction": "stable",
       "ranking_change": 0,
       "numeric_post_count": 236000.0,
-      "trend_status": "stable",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# happymothersday",
@@ -1085,11 +821,7 @@
       "ranking_direction": "stable",
       "ranking_change": 0,
       "numeric_post_count": 407000.0,
-      "trend_status": "stable",
-      "categories": [
-        "family"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# metgala",
@@ -1100,11 +832,7 @@
       "ranking_direction": "down",
       "ranking_change": 2,
       "numeric_post_count": 178000.0,
-      "trend_status": "stable",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# pakarmy",
@@ -1115,11 +843,7 @@
       "ranking_direction": "down",
       "ranking_change": 2,
       "numeric_post_count": 270000.0,
-      "trend_status": "stable",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# intermilan",
@@ -1130,11 +854,7 @@
       "ranking_direction": "down",
       "ranking_change": 3,
       "numeric_post_count": 136000.0,
-      "trend_status": "stable",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# gta6",
@@ -1145,11 +865,7 @@
       "ranking_direction": "down",
       "ranking_change": 5,
       "numeric_post_count": 116000.0,
-      "trend_status": "stable",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# karolg",
@@ -1160,11 +876,7 @@
       "ranking_direction": "stable",
       "ranking_change": 0,
       "numeric_post_count": 126000.0,
-      "trend_status": "stable",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# metgala2025",
@@ -1175,11 +887,7 @@
       "ranking_direction": "down",
       "ranking_change": 7,
       "numeric_post_count": 106000.0,
-      "trend_status": "stable",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# pak",
@@ -1190,11 +898,7 @@
       "ranking_direction": "stable",
       "ranking_change": 0,
       "numeric_post_count": 164000.0,
-      "trend_status": "stable",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# barcelona",
@@ -1205,11 +909,7 @@
       "ranking_direction": "stable",
       "ranking_change": 0,
       "numeric_post_count": 2000000.0,
-      "trend_status": "stable",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# 10demayo",
@@ -1220,11 +920,7 @@
       "ranking_direction": "down",
       "ranking_change": 7,
       "numeric_post_count": 107000.0,
-      "trend_status": "stable",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# 9мая",
@@ -1235,11 +931,7 @@
       "ranking_direction": "down",
       "ranking_change": 10,
       "numeric_post_count": 105000.0,
-      "trend_status": "stable",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# uefachampionsleague",
@@ -1250,11 +942,7 @@
       "ranking_direction": "stable",
       "ranking_change": 0,
       "numeric_post_count": 80000.0,
-      "trend_status": "stable",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# tren",
@@ -1265,11 +953,7 @@
       "ranking_direction": "down",
       "ranking_change": 9,
       "numeric_post_count": 1000000.0,
-      "trend_status": "stable",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# conclave",
@@ -1280,11 +964,7 @@
       "ranking_direction": "down",
       "ranking_change": 9,
       "numeric_post_count": 56000.0,
-      "trend_status": "stable",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# templatecapcut",
@@ -1295,11 +975,7 @@
       "ranking_direction": "down",
       "ranking_change": 8,
       "numeric_post_count": 997000.0,
-      "trend_status": "stable",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# деньпобеды",
@@ -1310,11 +986,7 @@
       "ranking_direction": "down",
       "ranking_change": 8,
       "numeric_post_count": 82000.0,
-      "trend_status": "stable",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# prettylittlebaby",
@@ -1325,11 +997,7 @@
       "ranking_direction": "down",
       "ranking_change": 6,
       "numeric_post_count": 72000.0,
-      "trend_status": "stable",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# maa",
@@ -1340,11 +1008,7 @@
       "ranking_direction": "stable",
       "ranking_change": 0,
       "numeric_post_count": 74000.0,
-      "trend_status": "stable",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# squidgamenetflix",
@@ -1355,11 +1019,7 @@
       "ranking_direction": "down",
       "ranking_change": 11,
       "numeric_post_count": 52000.0,
-      "trend_status": "falling",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "declining"
+      "trend_status": "falling"
     },
     {
       "hashtag": "# growagarden",
@@ -1370,11 +1030,7 @@
       "ranking_direction": "down",
       "ranking_change": 5,
       "numeric_post_count": 57000.0,
-      "trend_status": "stable",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# karinagarciaoficiall",
@@ -1385,11 +1041,7 @@
       "ranking_direction": "stable",
       "ranking_change": 0,
       "numeric_post_count": 59000.0,
-      "trend_status": "stable",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# mothersdaygiftideas",
@@ -1400,11 +1052,7 @@
       "ranking_direction": "down",
       "ranking_change": 11,
       "numeric_post_count": 78000.0,
-      "trend_status": "falling",
-      "categories": [
-        "family"
-      ],
-      "lifecycle_stage": "declining"
+      "trend_status": "falling"
     },
     {
       "hashtag": "# championsleague",
@@ -1415,11 +1063,7 @@
       "ranking_direction": "down",
       "ranking_change": 15,
       "numeric_post_count": 701000.0,
-      "trend_status": "falling",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "declining"
+      "trend_status": "falling"
     },
     {
       "hashtag": "# cincodemayo",
@@ -1430,11 +1074,7 @@
       "ranking_direction": "down",
       "ranking_change": 14,
       "numeric_post_count": 67000.0,
-      "trend_status": "falling",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "declining"
+      "trend_status": "falling"
     },
     {
       "hashtag": "# jamescharles",
@@ -1445,11 +1085,7 @@
       "ranking_direction": "down",
       "ranking_change": 13,
       "numeric_post_count": 26000.0,
-      "trend_status": "falling",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "declining"
+      "trend_status": "falling"
     },
     {
       "hashtag": "# mama",
@@ -1460,11 +1096,7 @@
       "ranking_direction": "down",
       "ranking_change": 9,
       "numeric_post_count": 783000.0,
-      "trend_status": "stable",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# zendaya",
@@ -1475,11 +1107,7 @@
       "ranking_direction": "down",
       "ranking_change": 13,
       "numeric_post_count": 34000.0,
-      "trend_status": "falling",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "declining"
+      "trend_status": "falling"
     },
     {
       "hashtag": "# valentina",
@@ -1490,11 +1118,7 @@
       "ranking_direction": "down",
       "ranking_change": 8,
       "numeric_post_count": 40000.0,
-      "trend_status": "stable",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "stable"
+      "trend_status": "stable"
     },
     {
       "hashtag": "# india",
@@ -1505,11 +1129,7 @@
       "ranking_direction": "down",
       "ranking_change": 12,
       "numeric_post_count": 729000.0,
-      "trend_status": "falling",
-      "categories": [
-        "other"
-      ],
-      "lifecycle_stage": "declining"
+      "trend_status": "falling"
     }
   ],
   "trending_songs": [
@@ -1996,380 +1616,5 @@
       ]
     }
   ],
-  "last_updated": "2025-05-14 08:08:56",
-  "hashtag_clusters": [
-    {
-      "id": "cluster_0",
-      "items": [
-        {
-          "hashtag": "# mothersday",
-          "rank": 1
-        },
-        {
-          "hashtag": "# mother",
-          "rank": 6
-        },
-        {
-          "hashtag": "# mothersday2025",
-          "rank": 16
-        },
-        {
-          "hashtag": "# mothersdaygift",
-          "rank": 18
-        },
-        {
-          "hashtag": "# mothers",
-          "rank": 20
-        },
-        {
-          "hashtag": "# mothersdayspecial",
-          "rank": 38
-        }
-      ],
-      "size": 6,
-      "categories": [
-        "family"
-      ],
-      "trend_strength": 2
-    },
-    {
-      "id": "cluster_1",
-      "items": [
-        {
-          "hashtag": "# happymothersday",
-          "rank": 2
-        },
-        {
-          "hashtag": "# happymothersday_all_mom",
-          "rank": 32
-        }
-      ],
-      "size": 2,
-      "categories": [
-        "family"
-      ],
-      "trend_strength": 2
-    },
-    {
-      "id": "cluster_2",
-      "items": [
-        {
-          "hashtag": "# mom",
-          "rank": 4
-        },
-        {
-          "hashtag": "# mommy",
-          "rank": 28
-        },
-        {
-          "hashtag": "# moms",
-          "rank": 41
-        }
-      ],
-      "size": 3,
-      "categories": [
-        "family"
-      ],
-      "trend_strength": 0
-    },
-    {
-      "id": "cluster_3",
-      "items": [
-        {
-          "hashtag": "# felizdiadelasmadres",
-          "rank": 5
-        },
-        {
-          "hashtag": "# felizdia",
-          "rank": 17
-        }
-      ],
-      "size": 2,
-      "categories": [
-        "other"
-      ],
-      "trend_strength": 1
-    },
-    {
-      "id": "cluster_4",
-      "items": [
-        {
-          "hashtag": "# madre",
-          "rank": 8
-        },
-        {
-          "hashtag": "# madres",
-          "rank": 14
-        },
-        {
-          "hashtag": "# madreehija",
-          "rank": 35
-        }
-      ],
-      "size": 3,
-      "categories": [
-        "other"
-      ],
-      "trend_strength": 0
-    },
-    {
-      "id": "cluster_5",
-      "items": [
-        {
-          "hashtag": "# felizdiamama",
-          "rank": 15
-        },
-        {
-          "hashtag": "# felizdia",
-          "rank": 17
-        }
-      ],
-      "size": 2,
-      "categories": [
-        "other"
-      ],
-      "trend_strength": 1
-    }
-  ],
-  "emerging_trends": [
-    {
-      "type": "hashtag",
-      "item": "# motherday",
-      "confidence": 95,
-      "categories": [
-        "family"
-      ],
-      "post_count": "29K"
-    },
-    {
-      "type": "hashtag",
-      "item": "# happymothersday_all_mom",
-      "confidence": 95,
-      "categories": [
-        "family"
-      ],
-      "post_count": "23K"
-    },
-    {
-      "type": "hashtag",
-      "item": "# motherslove",
-      "confidence": 95,
-      "categories": [
-        "family"
-      ],
-      "post_count": "21K"
-    },
-    {
-      "type": "hashtag",
-      "item": "# mothers",
-      "confidence": 92,
-      "categories": [
-        "family"
-      ],
-      "post_count": "40K"
-    },
-    {
-      "type": "song",
-      "item": "Running Off (Sped Up) - Jshxwty",
-      "confidence": 90,
-      "categories": [
-        "entertainment",
-        "music"
-      ],
-      "post_count": null
-    },
-    {
-      "type": "song",
-      "item": "Blessed Like That - threetwenty",
-      "confidence": 90,
-      "categories": [
-        "entertainment",
-        "music"
-      ],
-      "post_count": null
-    },
-    {
-      "type": "song",
-      "item": "COM MEDO! - Sayfalse & Scythermane",
-      "confidence": 90,
-      "categories": [
-        "entertainment",
-        "music"
-      ],
-      "post_count": null
-    },
-    {
-      "type": "song",
-      "item": "Suit & Tie (feat. Jay-Z) - Justin Timberlake",
-      "confidence": 90,
-      "categories": [
-        "entertainment",
-        "music"
-      ],
-      "post_count": null
-    },
-    {
-      "type": "song",
-      "item": "Take My Hand - Matt Berry",
-      "confidence": 90,
-      "categories": [
-        "entertainment",
-        "music"
-      ],
-      "post_count": null
-    },
-    {
-      "type": "song",
-      "item": "Dance for You - Beyoncé",
-      "confidence": 90,
-      "categories": [
-        "entertainment",
-        "music"
-      ],
-      "post_count": null
-    },
-    {
-      "type": "song",
-      "item": "Stupid Cupid - Connie Francis",
-      "confidence": 90,
-      "categories": [
-        "entertainment",
-        "music"
-      ],
-      "post_count": null
-    },
-    {
-      "type": "song",
-      "item": "Mary Jane's Last Dance - Tom Petty And The Heartbreakers",
-      "confidence": 90,
-      "categories": [
-        "entertainment",
-        "music"
-      ],
-      "post_count": null
-    },
-    {
-      "type": "song",
-      "item": "Smaller Acts - Zach Bryan",
-      "confidence": 90,
-      "categories": [
-        "entertainment",
-        "music"
-      ],
-      "post_count": null
-    },
-    {
-      "type": "song",
-      "item": "Downtown - Lady Antebellum",
-      "confidence": 90,
-      "categories": [
-        "entertainment",
-        "music"
-      ],
-      "post_count": null
-    },
-    {
-      "type": "hashtag",
-      "item": "# mothersday2025",
-      "confidence": 89,
-      "categories": [
-        "family"
-      ],
-      "post_count": "51K"
-    },
-    {
-      "type": "hashtag",
-      "item": "# diadasmaes",
-      "confidence": 86,
-      "categories": [
-        "other"
-      ],
-      "post_count": "580K"
-    },
-    {
-      "type": "hashtag",
-      "item": "# happymothersday",
-      "confidence": 71,
-      "categories": [
-        "family"
-      ],
-      "post_count": "334K"
-    },
-    {
-      "type": "hashtag",
-      "item": "# growagarden",
-      "confidence": 68,
-      "categories": [
-        "other"
-      ],
-      "post_count": "40K"
-    },
-    {
-      "type": "hashtag",
-      "item": "# prettylittlebaby",
-      "confidence": 65,
-      "categories": [
-        "other"
-      ],
-      "post_count": "63K"
-    },
-    {
-      "type": "hashtag",
-      "item": "# mama",
-      "confidence": 56,
-      "categories": [
-        "other"
-      ],
-      "post_count": "371K"
-    },
-    {
-      "type": "hashtag",
-      "item": "# maa",
-      "confidence": 50,
-      "categories": [
-        "other"
-      ],
-      "post_count": "27K"
-    }
-  ],
-  "category_analysis": [
-    {
-      "name": "other",
-      "count": 27,
-      "percentage": 60.0,
-      "top_hashtags": [
-        {
-          "hashtag": "# mama",
-          "rank": 3
-        },
-        {
-          "hashtag": "# felizdiadelasmadres",
-          "rank": 5
-        },
-        {
-          "hashtag": "# mamá",
-          "rank": 7
-        }
-      ]
-    },
-    {
-      "name": "family",
-      "count": 18,
-      "percentage": 40.0,
-      "top_hashtags": [
-        {
-          "hashtag": "# mothersday",
-          "rank": 1
-        },
-        {
-          "hashtag": "# happymothersday",
-          "rank": 2
-        },
-        {
-          "hashtag": "# mom",
-          "rank": 4
-        }
-      ]
-    }
-  ]
+  "last_updated": "2025-05-14 08:08:56"
 }
