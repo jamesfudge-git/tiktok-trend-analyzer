@@ -733,9 +733,11 @@
             
             // Set chart image if available
             if (trend.chart_image) {
-                chartImage.src = trend.chart_image;
-                chartImage.style.display = 'block';
-                
+    // Extract just the filename from the path
+            const imageName = trend.chart_image.split('/').pop();
+            chartImage.src = 'charts/' + imageName;
+            chartImage.style.display = 'block';
+                 
                 // Provide chart analysis based on status
                 switch(trend.status) {
                     case 'rising':
