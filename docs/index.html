@@ -390,6 +390,11 @@
             color: white;
         }
         
+        .status-growing {
+            background-color: #7AC74F;
+            color: white;
+        }
+        
         .status-peaked {
             background-color: var(--peaked);
             color: var(--dark);
@@ -400,7 +405,7 @@
             color: white;
         }
         
-        .status-falling {
+        .status-falling, .status-declining {
             background-color: var(--falling);
             color: white;
         }
@@ -499,11 +504,14 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background-color: #f9f9f9;
+            text-align: center;
         }
         
         .trend-chart img {
             max-width: 100%;
             display: block;
+            margin: 0 auto;
         }
         
         .chart-analysis {
@@ -536,6 +544,39 @@
             border-top-color: #fff;
             animation: spin 1s linear infinite;
             margin-right: 5px;
+        }
+        
+        .chart-placeholder {
+            padding: 50px;
+            text-align: center;
+            color: var(--gray);
+            font-style: italic;
+        }
+        
+        .ranking-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .ranking-up {
+            background-color: rgba(0, 196, 140, 0.1);
+            color: var(--rising);
+        }
+        
+        .ranking-down {
+            background-color: rgba(255, 89, 89, 0.1);
+            color: var(--falling);
+        }
+        
+        .ranking-stable {
+            background-color: rgba(17, 138, 178, 0.1);
+            color: var(--stable);
         }
         
         @keyframes spin {
@@ -666,8 +707,9 @@
                 <select id="status-filter">
                     <option value="all">All Statuses</option>
                     <option value="rising">Rising</option>
+                    <option value="growing">Growing</option>
                     <option value="stable">Stable</option>
-                    <option value="falling">Falling</option>
+                    <option value="declining">Declining</option>
                 </select>
             </div>
             
@@ -713,8 +755,8 @@
                                 <div class="trend-details-meta-label">Posts</div>
                             </div>
                             <div class="trend-details-meta-item">
-                                <div class="trend-details-meta-value" id="hashtag-detail-growth">--</div>
-                                <div class="trend-details-meta-label">Growth</div>
+                                <div class="trend-details-meta-value" id="hashtag-detail-change">--</div>
+                                <div class="trend-details-meta-label">Ranking Change</div>
                             </div>
                             <div class="trend-details-meta-item">
                                 <div class="trend-details-meta-value" id="hashtag-detail-momentum">--</div>
@@ -727,7 +769,10 @@
                         <div class="trend-chart">
                             <h3>Trend Performance</h3>
                             <div class="trend-chart-container">
-                                <img id="hashtag-chart-image" src="" alt="Trend performance chart">
+                                <img id="hashtag-chart-image" src="" alt="Trend performance chart" style="display: none;">
+                                <div id="hashtag-chart-placeholder" class="chart-placeholder">
+                                    Chart data unavailable for this trend
+                                </div>
                             </div>
                             
                             <div class="chart-analysis">
@@ -783,8 +828,8 @@
                                 <div class="trend-details-meta-label">Videos</div>
                             </div>
                             <div class="trend-details-meta-item">
-                                <div class="trend-details-meta-value" id="song-detail-growth">--</div>
-                                <div class="trend-details-meta-label">Growth</div>
+                                <div class="trend-details-meta-value" id="song-detail-change">--</div>
+                                <div class="trend-details-meta-label">Ranking Change</div>
                             </div>
                             <div class="trend-details-meta-item">
                                 <div class="trend-details-meta-value" id="song-detail-artist">--</div>
@@ -795,7 +840,10 @@
                         <div class="trend-chart">
                             <h3>Song Performance</h3>
                             <div class="trend-chart-container">
-                                <img id="song-chart-image" src="" alt="Song performance chart">
+                                <img id="song-chart-image" src="" alt="Song performance chart" style="display: none;">
+                                <div id="song-chart-placeholder" class="chart-placeholder">
+                                    Chart data unavailable for this song
+                                </div>
                             </div>
                             
                             <div class="chart-analysis">
@@ -851,15 +899,22 @@
                                 <div class="trend-details-meta-label">Videos</div>
                             </div>
                             <div class="trend-details-meta-item">
-                                <div class="trend-details-meta-value" id="breakout-detail-growth">--</div>
-                                <div class="trend-details-meta-label">Growth</div>
+                                <div class="trend-details-meta-value" id="breakout-detail-change">--</div>
+                                <div class="trend-details-meta-label">Ranking Change</div>
+                            </div>
+                            <div class="trend-details-meta-item">
+                                <div class="trend-details-meta-value" id="breakout-detail-artist">--</div>
+                                <div class="trend-details-meta-label">Artist</div>
                             </div>
                         </div>
                         
                         <div class="trend-chart">
                             <h3>Breakout Performance</h3>
                             <div class="trend-chart-container">
-                                <img id="breakout-chart-image" src="" alt="Breakout performance chart">
+                                <img id="breakout-chart-image" src="" alt="Breakout performance chart" style="display: none;">
+                                <div id="breakout-chart-placeholder" class="chart-placeholder">
+                                    Chart data unavailable for this trend
+                                </div>
                             </div>
                             
                             <div class="chart-analysis">
@@ -961,12 +1016,20 @@
         // Load data from JSON file
         async function loadTrendData() {
             try {
+                // Try to load from trendData.json first
                 const response = await fetch('trendData.json');
                 if (!response.ok) {
-                    throw new Error('Could not load data');
+                    // If that fails, try data/current_data.json
+                    const backupResponse = await fetch('../data/current_data.json');
+                    if (!backupResponse.ok) {
+                        throw new Error('Could not load data from any location');
+                    }
+                    trendData = await backupResponse.json();
+                } else {
+                    trendData = await response.json();
                 }
                 
-                trendData = await response.json();
+                // Process the data
                 updateDisplay();
                 updateStats();
                 
@@ -997,9 +1060,34 @@
             refreshIcon.innerHTML = '<div class="loading-spinner"></div>';
             refreshButton.innerHTML = refreshButton.innerHTML.replace('Refresh Data', 'Refreshing...');
             
+            // Force cache refresh by adding timestamp
+            const timestamp = new Date().getTime();
+            
             // Reload data
-            loadTrendData()
-                .then(() => {
+            fetch(`trendData.json?t=${timestamp}`)
+                .then(response => {
+                    if (!response.ok) {
+                        return fetch(`../data/current_data.json?t=${timestamp}`);
+                    }
+                    return response;
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Could not refresh data');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    trendData = data;
+                    updateDisplay();
+                    updateStats();
+                    
+                    // Update last updated time
+                    if (trendData.last_updated) {
+                        document.getElementById('last-updated').textContent = 
+                            `Last updated: ${new Date(trendData.last_updated).toLocaleString()}`;
+                    }
+                    
                     // Re-enable button and restore icon
                     refreshButton.disabled = false;
                     refreshIcon.className = 'fas fa-sync-alt';
@@ -1116,13 +1204,19 @@
                 const status = hashtag.lifecycle_stage || hashtag.status || hashtag.trend_status || 'stable';
                 const statusClass = `status-${status}`;
                 
-                // Determine growth direction
-                const growth = hashtag.growth || 0;
-                const growthDirection = growth >= 0 ? 'positive' : 'negative';
-                const growthIcon = growthDirection === 'positive' ? 'fa-arrow-up' : 'fa-arrow-down';
-                
                 // Create rank class
                 const rankClass = index < 3 ? 'top-rank' : '';
+                
+                // Ranking direction and change
+                const direction = hashtag.ranking_direction || 'stable';
+                const change = hashtag.ranking_change || 0;
+                let rankingBadge = '';
+                
+                if (direction === 'up' && change > 0) {
+                    rankingBadge = `<span class="ranking-badge ranking-up"><i class="fas fa-arrow-up"></i> ${change}</span>`;
+                } else if (direction === 'down' && change > 0) {
+                    rankingBadge = `<span class="ranking-badge ranking-down"><i class="fas fa-arrow-down"></i> ${change}</span>`;
+                }
                 
                 const item = document.createElement('li');
                 item.className = 'trend-item';
@@ -1144,15 +1238,13 @@
                     <div class="trend-rank ${rankClass}">${hashtag.rank || index + 1}</div>
                     <div class="trend-content">
                         <div class="trend-name">
-                            ${hashtag.hashtag}
+                            ${hashtag.hashtag}${rankingBadge}
                         </div>
                         <div class="trend-meta">
                             <span class="trend-metric">
                                 <i class="fas fa-photo-video"></i> ${hashtag.post_count || 'N/A'}
                             </span>
-                            <span class="trend-metric growth-${growthDirection}">
-                                <i class="fas ${growthIcon}"></i> ${Math.abs(growth)}%
-                            </span>
+                            ${hashtag.period_momentum ? `<span class="trend-metric"><i class="fas fa-chart-line"></i> ${hashtag.period_momentum}</span>` : ''}
                         </div>
                         ${categoriesHTML}
                     </div>
@@ -1191,13 +1283,19 @@
                 const status = song.lifecycle_stage || song.status || 'stable';
                 const statusClass = `status-${status}`;
                 
-                // Determine growth direction
-                const growth = song.growth || 0;
-                const growthDirection = growth >= 0 ? 'positive' : 'negative';
-                const growthIcon = growthDirection === 'positive' ? 'fa-arrow-up' : 'fa-arrow-down';
-                
                 // Create rank class
                 const rankClass = index < 3 ? 'top-rank' : '';
+                
+                // Ranking direction and change
+                const direction = song.ranking_direction || 'stable';
+                const change = song.ranking_change || 0;
+                let rankingBadge = '';
+                
+                if (direction === 'up' && change > 0) {
+                    rankingBadge = `<span class="ranking-badge ranking-up"><i class="fas fa-arrow-up"></i> ${change}</span>`;
+                } else if (direction === 'down' && change > 0) {
+                    rankingBadge = `<span class="ranking-badge ranking-down"><i class="fas fa-arrow-down"></i> ${change}</span>`;
+                }
                 
                 const item = document.createElement('li');
                 item.className = 'trend-item';
@@ -1209,7 +1307,7 @@
                     <div class="trend-rank ${rankClass}">${song.rank || index + 1}</div>
                     <div class="trend-content">
                         <div class="trend-name">
-                            ${song.song_name}
+                            ${song.song_name}${rankingBadge}
                         </div>
                         <div class="trend-meta">
                             <span class="trend-metric">
@@ -1217,9 +1315,6 @@
                             </span>
                             <span class="trend-metric">
                                 <i class="fas fa-play-circle"></i> ${song.post_count || 'N/A'}
-                            </span>
-                            <span class="trend-metric growth-${growthDirection}">
-                                <i class="fas ${growthIcon}"></i> ${Math.abs(growth)}%
                             </span>
                         </div>
                     </div>
@@ -1254,11 +1349,19 @@
             breakoutSongs.forEach((song, index) => {
                 if (index >= 10) return; // Limit to top 10
                 
-                // Determine growth
-                const growth = song.growth || 200; // Breakout songs have high growth by definition
-                
                 // Create rank class
                 const rankClass = index < 3 ? 'top-rank' : '';
+                
+                // Ranking direction and change
+                const direction = song.ranking_direction || 'stable';
+                const change = song.ranking_change || 0;
+                let rankingBadge = '';
+                
+                if (direction === 'up' && change > 0) {
+                    rankingBadge = `<span class="ranking-badge ranking-up"><i class="fas fa-arrow-up"></i> ${change}</span>`;
+                } else if (direction === 'down' && change > 0) {
+                    rankingBadge = `<span class="ranking-badge ranking-down"><i class="fas fa-arrow-down"></i> ${change}</span>`;
+                }
                 
                 const item = document.createElement('li');
                 item.className = 'trend-item';
@@ -1270,7 +1373,7 @@
                     <div class="trend-rank ${rankClass}">${song.rank || index + 1}</div>
                     <div class="trend-content">
                         <div class="trend-name">
-                            ${song.song_name}
+                            ${song.song_name}${rankingBadge}
                         </div>
                         <div class="trend-meta">
                             <span class="trend-metric">
@@ -1278,9 +1381,6 @@
                             </span>
                             <span class="trend-metric">
                                 <i class="fas fa-play-circle"></i> ${song.post_count || 'N/A'}
-                            </span>
-                            <span class="trend-metric growth-positive">
-                                <i class="fas fa-arrow-up"></i> ${Math.abs(growth)}%
                             </span>
                         </div>
                     </div>
@@ -1302,6 +1402,24 @@
             });
         }
         
+        // Helper function to safely get chart image path
+        function getChartImagePath(chartImagePath) {
+            if (!chartImagePath) return null;
+            
+            // First, try to extract just the filename
+            const imageName = chartImagePath.split('/').pop();
+            
+            // Check various possible chart locations
+            const possiblePaths = [
+                `../charts/${imageName}`,      // Relative to docs folder pointing to project root
+                `charts/${imageName}`,         // If charts folder is inside docs
+                chartImagePath                 // Original path as is
+            ];
+            
+            // Return the first valid path (checking existence happens when trying to load)
+            return possiblePaths[0];
+        }
+        
         // Show hashtag details
         function showHashtagDetails(hashtag) {
             selectedHashtag = hashtag;
@@ -1313,10 +1431,11 @@
             const detailStatus = document.getElementById('hashtag-detail-status');
             const detailRank = document.getElementById('hashtag-detail-rank');
             const detailPosts = document.getElementById('hashtag-detail-posts');
-            const detailGrowth = document.getElementById('hashtag-detail-growth');
+            const detailChange = document.getElementById('hashtag-detail-change');
             const detailMomentum = document.getElementById('hashtag-detail-momentum');
             const detailCategories = document.getElementById('hashtag-detail-categories');
             const chartImage = document.getElementById('hashtag-chart-image');
+            const chartPlaceholder = document.getElementById('hashtag-chart-placeholder');
             const chartAnalysis = document.getElementById('hashtag-chart-analysis');
             
             // Show the details content
@@ -1335,11 +1454,20 @@
             detailRank.textContent = hashtag.rank || '-';
             detailPosts.textContent = hashtag.post_count || 'N/A';
             
-            // Growth
-            const growth = hashtag.growth || 0;
-            const growthClass = growth >= 0 ? 'growth-positive' : 'growth-negative';
-            detailGrowth.textContent = `${growth >= 0 ? '+' : ''}${growth}%`;
-            detailGrowth.className = `trend-details-meta-value ${growthClass}`;
+            // Ranking change
+            const direction = hashtag.ranking_direction || 'stable';
+            const change = hashtag.ranking_change || 0;
+            
+            if (direction === 'up' && change > 0) {
+                detailChange.innerHTML = `<i class="fas fa-arrow-up"></i> ${change}`;
+                detailChange.className = 'trend-details-meta-value growth-positive';
+            } else if (direction === 'down' && change > 0) {
+                detailChange.innerHTML = `<i class="fas fa-arrow-down"></i> ${change}`;
+                detailChange.className = 'trend-details-meta-value growth-negative';
+            } else {
+                detailChange.textContent = '-';
+                detailChange.className = 'trend-details-meta-value';
+            }
             
             // Momentum
             detailMomentum.textContent = hashtag.period_momentum || '-';
@@ -1357,52 +1485,76 @@
             
             // Set chart image if available
             if (hashtag.chart_image) {
-                // Extract just the filename from the path
-                const imageName = hashtag.chart_image.split('/').pop();
-                chartImage.src = 'charts/' + imageName;
-                chartImage.style.display = 'block';
+                const chartPath = getChartImagePath(hashtag.chart_image);
+                
+                // Test the image
+                const testImage = new Image();
+                testImage.onload = function() {
+                    // Image loaded successfully
+                    chartImage.src = chartPath;
+                    chartImage.style.display = 'block';
+                    chartPlaceholder.style.display = 'none';
+                };
+                testImage.onerror = function() {
+                    // Image failed to load
+                    chartImage.style.display = 'none';
+                    chartPlaceholder.style.display = 'block';
+                };
+                testImage.src = chartPath;
                 
                 // Provide chart analysis based on status
                 switch(status) {
                     case 'rising':
                         chartAnalysis.innerHTML = 
-                            `<strong>${hashtag.hashtag}</strong> is showing strong upward momentum ` +
-                            `with a growth rate of <strong>${growth}%</strong>. ` +
+                            `<strong>${hashtag.hashtag}</strong> is showing strong upward momentum. ` +
+                            `The ranking direction is <strong>${direction}</strong> with a change of <strong>${change}</strong> positions. ` +
                             `The chart pattern suggests this trend is in its early growth phase and likely to ` +
                             `continue gaining popularity. ` +
                             `${hashtag.period_momentum ? `Current momentum is <strong>${hashtag.period_momentum}</strong>, indicating this trend has significant potential.` : ''}`;
                         break;
                     case 'growing':
+                        chartAnalysis.innerHTML = 
+                            `<strong>${hashtag.hashtag}</strong> is showing steady growth. ` +
+                            `The ranking direction is <strong>${direction}</strong> with a change of <strong>${change}</strong> positions. ` +
+                            `This hashtag is gaining traction and represents a good opportunity for content creation.`;
+                        break;
                     case 'peaked':
                         chartAnalysis.innerHTML = 
-                            `<strong>${hashtag.hashtag}</strong> has reached peak popularity ` +
-                            `with a growth rate of <strong>${growth}%</strong>. ` +
+                            `<strong>${hashtag.hashtag}</strong> has reached peak popularity. ` +
+                            `The ranking direction is <strong>${direction}</strong> with a change of <strong>${change}</strong> positions. ` +
                             `The chart pattern shows strong recent performance but may be approaching saturation. ` +
                             `This is an optimal time to create content using this hashtag for maximum visibility.`;
                         break;
                     case 'stable':
                         chartAnalysis.innerHTML = 
-                            `<strong>${hashtag.hashtag}</strong> is showing stable performance ` +
-                            `with a growth rate of <strong>${growth}%</strong>. ` +
+                            `<strong>${hashtag.hashtag}</strong> is showing stable performance. ` +
+                            `The ranking direction is <strong>${direction}</strong> with a change of <strong>${change}</strong> positions. ` +
                             `The chart pattern indicates consistent engagement, suggesting this trend has ` +
                             `established staying power and reliable audience reach.`;
                         break;
                     case 'declining':
                     case 'falling':
                         chartAnalysis.innerHTML = 
-                            `<strong>${hashtag.hashtag}</strong> appears to be declining ` +
-                            `with a growth rate of <strong>${growth}%</strong>. ` +
+                            `<strong>${hashtag.hashtag}</strong> appears to be declining. ` +
+                            `The ranking direction is <strong>${direction}</strong> with a change of <strong>${change}</strong> positions. ` +
                             `The chart pattern shows diminishing engagement, suggesting this trend is past its peak. ` +
                             `Consider focusing on newer trending hashtags unless specifically targeting this niche.`;
                         break;
                     default:
                         chartAnalysis.innerHTML = 
-                            `<strong>${hashtag.hashtag}</strong> shows a growth rate of <strong>${growth}%</strong>. ` +
+                            `<strong>${hashtag.hashtag}</strong> shows a ranking direction of <strong>${direction}</strong> ` +
+                            `with a change of <strong>${change}</strong> positions. ` +
                             `Monitor this hashtag's performance over time to identify potential opportunities for engagement.`;
                 }
             } else {
                 chartImage.style.display = 'none';
-                chartAnalysis.textContent = 'Chart data not available for this hashtag.';
+                chartPlaceholder.style.display = 'block';
+                
+                chartAnalysis.innerHTML = 
+                    `<strong>${hashtag.hashtag}</strong> has a ranking direction of <strong>${direction}</strong> ` +
+                    `with a change of <strong>${change}</strong> positions. ` +
+                    `${hashtag.period_momentum ? `Current momentum is <strong>${hashtag.period_momentum}</strong>. ` : ''}` +
+                    `Chart data is not available for this hashtag, but you can still assess its performance based on ranking metrics.`;
             }
         }
         
@@ -1417,9 +1569,10 @@
             const detailStatus = document.getElementById('song-detail-status');
             const detailRank = document.getElementById('song-detail-rank');
             const detailPosts = document.getElementById('song-detail-posts');
-            const detailGrowth = document.getElementById('song-detail-growth');
+            const detailChange = document.getElementById('song-detail-change');
             const detailArtist = document.getElementById('song-detail-artist');
             const chartImage = document.getElementById('song-chart-image');
+            const chartPlaceholder = document.getElementById('song-chart-placeholder');
             const chartAnalysis = document.getElementById('song-chart-analysis');
             
             // Show the details content
@@ -1438,61 +1591,87 @@
             detailRank.textContent = song.rank || '-';
             detailPosts.textContent = song.post_count || 'N/A';
             
-            // Growth
-            const growth = song.growth || 0;
-            const growthClass = growth >= 0 ? 'growth-positive' : 'growth-negative';
-            detailGrowth.textContent = `${growth >= 0 ? '+' : ''}${growth}%`;
-            detailGrowth.className = `trend-details-meta-value ${growthClass}`;
+            // Ranking change
+            const direction = song.ranking_direction || 'stable';
+            const change = song.ranking_change || 0;
+            
+            if (direction === 'up' && change > 0) {
+                detailChange.innerHTML = `<i class="fas fa-arrow-up"></i> ${change}`;
+                detailChange.className = 'trend-details-meta-value growth-positive';
+            } else if (direction === 'down' && change > 0) {
+                detailChange.innerHTML = `<i class="fas fa-arrow-down"></i> ${change}`;
+                detailChange.className = 'trend-details-meta-value growth-negative';
+            } else {
+                detailChange.textContent = '-';
+                detailChange.className = 'trend-details-meta-value';
+            }
             
             // Artist
             detailArtist.textContent = song.artist || 'Unknown';
             
             // Set chart image if available
             if (song.chart_image) {
-                // Extract just the filename from the path
-                const imageName = song.chart_image.split('/').pop();
-                chartImage.src = 'charts/' + imageName;
-                chartImage.style.display = 'block';
+                const chartPath = getChartImagePath(song.chart_image);
+                
+                // Test the image
+                const testImage = new Image();
+                testImage.onload = function() {
+                    // Image loaded successfully
+                    chartImage.src = chartPath;
+                    chartImage.style.display = 'block';
+                    chartPlaceholder.style.display = 'none';
+                };
+                testImage.onerror = function() {
+                    // Image failed to load
+                    chartImage.style.display = 'none';
+                    chartPlaceholder.style.display = 'block';
+                };
+                testImage.src = chartPath;
                 
                 // Provide chart analysis based on status
                 switch(status) {
                     case 'rising':
                         chartAnalysis.innerHTML = 
-                            `<strong>${song.song_name}</strong> by ${song.artist || 'Unknown Artist'} is trending rapidly ` +
-                            `with a growth rate of <strong>${growth}%</strong>. ` +
+                            `<strong>${song.song_name}</strong> by ${song.artist || 'Unknown Artist'} is trending rapidly. ` +
+                            `The ranking direction is <strong>${direction}</strong> with a change of <strong>${change}</strong> positions. ` +
                             `The chart pattern indicates this song is gaining significant traction and could become a major hit. ` +
                             `Creating content with this audio now could lead to excellent visibility and engagement.`;
                         break;
                     case 'peaked':
                         chartAnalysis.innerHTML = 
-                            `<strong>${song.song_name}</strong> by ${song.artist || 'Unknown Artist'} has reached peak popularity ` +
-                            `with a growth rate of <strong>${growth}%</strong>. ` +
+                            `<strong>${song.song_name}</strong> by ${song.artist || 'Unknown Artist'} has reached peak popularity. ` +
+                            `The ranking direction is <strong>${direction}</strong> with a change of <strong>${change}</strong> positions. ` +
                             `The chart pattern shows strong performance but may have plateaued. ` +
                             `This is still an excellent time to use this audio for maximum reach.`;
                         break;
                     case 'stable':
                         chartAnalysis.innerHTML = 
-                            `<strong>${song.song_name}</strong> by ${song.artist || 'Unknown Artist'} is maintaining consistent performance ` +
-                            `with a growth rate of <strong>${growth}%</strong>. ` +
+                            `<strong>${song.song_name}</strong> by ${song.artist || 'Unknown Artist'} is maintaining consistent performance. ` +
+                            `The ranking direction is <strong>${direction}</strong> with a change of <strong>${change}</strong> positions. ` +
                             `The chart shows steady engagement, suggesting this audio has reliable appeal and staying power.`;
                         break;
                     case 'falling':
                     case 'declining':
                         chartAnalysis.innerHTML = 
-                            `<strong>${song.song_name}</strong> by ${song.artist || 'Unknown Artist'} is showing declining engagement ` +
-                            `with a growth rate of <strong>${growth}%</strong>. ` +
+                            `<strong>${song.song_name}</strong> by ${song.artist || 'Unknown Artist'} is showing declining engagement. ` +
+                            `The ranking direction is <strong>${direction}</strong> with a change of <strong>${change}</strong> positions. ` +
                             `The chart indicates this song may be past its peak popularity. ` +
                             `Consider focusing on newer trending audio unless specifically targeting this song's audience.`;
                         break;
                     default:
                         chartAnalysis.innerHTML = 
                             `<strong>${song.song_name}</strong> by ${song.artist || 'Unknown Artist'} ` +
-                            `shows a growth rate of <strong>${growth}%</strong>. ` +
+                            `has a ranking direction of <strong>${direction}</strong> with a change of <strong>${change}</strong> positions. ` +
                             `Consider using this audio in your content to tap into its current popularity.`;
                 }
             } else {
                 chartImage.style.display = 'none';
-                chartAnalysis.textContent = 'Chart data not available for this song.';
+                chartPlaceholder.style.display = 'block';
+                
+                chartAnalysis.innerHTML = 
+                    `<strong>${song.song_name}</strong> by ${song.artist || 'Unknown Artist'} ` +
+                    `has a ranking direction of <strong>${direction}</strong> with a change of <strong>${change}</strong> positions. ` +
+                    `Chart data is not available for this song, but you can still assess its performance based on ranking metrics.`;
             }
         }
         
@@ -1506,8 +1685,10 @@
             const detailTitle = document.getElementById('breakout-detail-title');
             const detailRank = document.getElementById('breakout-detail-rank');
             const detailPosts = document.getElementById('breakout-detail-posts');
-            const detailGrowth = document.getElementById('breakout-detail-growth');
+            const detailChange = document.getElementById('breakout-detail-change');
+            const detailArtist = document.getElementById('breakout-detail-artist');
             const chartImage = document.getElementById('breakout-chart-image');
+            const chartPlaceholder = document.getElementById('breakout-chart-placeholder');
             const chartAnalysis = document.getElementById('breakout-chart-analysis');
             
             // Show the details content
@@ -1515,34 +1696,67 @@
             noSelection.style.display = 'none';
             
             // Fill in details
-            detailTitle.textContent = `${song.song_name} by ${song.artist || 'Unknown Artist'}`;
+            detailTitle.textContent = `${song.song_name}`;
             
             // Metrics
             detailRank.textContent = song.rank || '-';
             detailPosts.textContent = song.post_count || 'N/A';
             
-            // Growth (breakout songs always have high growth)
-            const growth = song.growth || 200;
-            detailGrowth.textContent = `+${growth}%`;
-            detailGrowth.className = 'trend-details-meta-value growth-positive';
+            // Artist
+            detailArtist.textContent = song.artist || 'Unknown';
+            
+            // Ranking change
+            const direction = song.ranking_direction || 'up'; // Breakout songs are typically rising
+            const change = song.ranking_change || 0;
+            
+            if (direction === 'up' && change > 0) {
+                detailChange.innerHTML = `<i class="fas fa-arrow-up"></i> ${change}`;
+                detailChange.className = 'trend-details-meta-value growth-positive';
+            } else if (direction === 'down' && change > 0) {
+                detailChange.innerHTML = `<i class="fas fa-arrow-down"></i> ${change}`;
+                detailChange.className = 'trend-details-meta-value growth-negative';
+            } else {
+                detailChange.textContent = 'New';
+                detailChange.className = 'trend-details-meta-value growth-positive';
+            }
             
             // Set chart image if available
             if (song.chart_image) {
-                // Extract just the filename from the path
-                const imageName = song.chart_image.split('/').pop();
-                chartImage.src = 'charts/' + imageName;
-                chartImage.style.display = 'block';
+                const chartPath = getChartImagePath(song.chart_image);
+                
+                // Test the image
+                const testImage = new Image();
+                testImage.onload = function() {
+                    // Image loaded successfully
+                    chartImage.src = chartPath;
+                    chartImage.style.display = 'block';
+                    chartPlaceholder.style.display = 'none';
+                };
+                testImage.onerror = function() {
+                    // Image failed to load
+                    chartImage.style.display = 'none';
+                    chartPlaceholder.style.display = 'block';
+                };
+                testImage.src = chartPath;
                 
                 // Breakout songs analysis
                 chartAnalysis.innerHTML = 
                     `<strong>${song.song_name}</strong> by ${song.artist || 'Unknown Artist'} ` +
-                    `is experiencing breakout growth with an exceptional growth rate of <strong>${growth}%</strong>. ` +
+                    `is experiencing breakout growth with a ranking direction of <strong>${direction}</strong>` +
+                    `${change > 0 ? ` and a change of <strong>${change}</strong> positions` : ''}. ` +
                     `This song is rapidly gaining traction and represents a prime opportunity for content creation. ` +
                     `Being early to adopt breakout songs like this often leads to significantly higher engagement and visibility. ` +
                     `Consider creating content with this audio immediately to capitalize on its accelerating popularity.`;
             } else {
                 chartImage.style.display = 'none';
-                chartAnalysis.textContent = 'Chart data not available for this breakout song.';
+                chartPlaceholder.style.display = 'block';
+                
+                chartAnalysis.innerHTML = 
+                    `<strong>${song.song_name}</strong> by ${song.artist || 'Unknown Artist'} ` +
+                    `is a breakout song with a ranking direction of <strong>${direction}</strong>` +
+                    `${change > 0 ? ` and a change of <strong>${change}</strong> positions` : ''}. ` +
+                    `Even without chart data, breakout status indicates this song is rapidly gaining popularity. ` +
+                    `Creating content with this audio now could lead to excellent visibility as it continues to rise.`;
             }
         }
         
